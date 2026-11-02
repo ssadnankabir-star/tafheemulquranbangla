@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light" data-font="noorehuda">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4f9157"><title>আল কুরআন v4.1 – তাফসির এবং শব্দে শব্দে</title>
+<style>
+@font-face{font-family:'Native IndoPak';src:url(fonts/75c2c46d72.ttf) format('truetype');font-display:swap}
+@font-face{font-family:'Native Uthmani';src:url(fonts/fe292da47e.ttf) format('truetype');font-display:swap}
+
+@font-face{font-family:'Ruqyah AlMushaf';src:url(fonts/f5a9dba1b0.ttf) format('truetype');font-display:swap}
+@font-face{font-family:'SolaimanLipi';src:url(fonts/f5a854f14f.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'SolaimanLipi';src:url(fonts/21c11bd2df.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Ruqyah Muhammadi';src:url(fonts/a600a201b2.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Ruqyah Saleem';src:url(fonts/0afe379f03.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Ruqyah AlQalam';src:url(fonts/9de71861cc.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Ruqyah Nabi';src:url(fonts/c5232635aa.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Ruqyah Neirizi';src:url(fonts/bbf751ffec.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Ruqyah Hafs';src:url(fonts/44947ac5ac.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Noorehuda';src:url(fonts/926339573a.ttf) format('truetype');font-display:swap}
+@font-face{font-family:'AlQuran IndoPak';src:url(fonts/abb04970ba.woff2) format('woff2');font-display:swap}
+:root{--g:#4f9157;--gd:#3f7a47;--bg:#fff;--bg2:#f3f3f3;--tx:#222;--mu:#777;--bd:#e8e8e8;--lt:#e3f0e3;--card:#fff;--ar:'Noorehuda','AlQuran IndoPak','Ruqyah Hafs',serif;--asz:31px;--bsz:19px;--body:'SolaimanLipi','Noto Sans Bengali',Arial,sans-serif}
+html[data-theme=dark]{--bg:#121a16;--bg2:#1a251f;--tx:#e3ece6;--mu:#9bb0a4;--bd:#2a3a31;--lt:#1f3a2b;--card:#17221c}
+html[data-theme=sepia]{--bg:#fbf5e6;--bg2:#f1e7cd;--tx:#3d3122;--mu:#80705a;--bd:#e2d5b8;--lt:#e8dcbc;--card:#fbf5e6}
+html[data-font=noorehuda]{--ar:'Noorehuda','AlQuran IndoPak','Ruqyah Hafs',serif}html[data-font=indopak]{--ar:'AlQuran IndoPak','Noorehuda','Ruqyah Hafs',serif}html[data-font=hafs]{--ar:'Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=mushaf]{--ar:'Ruqyah AlMushaf','Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=muhammadi]{--ar:'Ruqyah Muhammadi','Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=saleem]{--ar:'Ruqyah Saleem','Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=alqalam]{--ar:'Ruqyah AlQalam','Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=nabi]{--ar:'Ruqyah Nabi','Ruqyah Hafs','Ruqyah Hafs',serif}html[data-font=neirizi]{--ar:'Ruqyah Neirizi','Ruqyah Hafs','Ruqyah Hafs',serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font:16px/1.6 var(--body)}
+button,input{font:inherit;color:inherit}button{cursor:pointer;background:none;border:0;padding:0}svg{display:block;fill:currentColor}
+.hd{height:56px;background:var(--g);color:#fff;display:flex;align-items:center;gap:6px;padding:0 8px;flex:none}.hd h1{font-size:17px;font-weight:400;margin:0 auto 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;flex:none}.ib:active{background:#fff3}
+#app{position:fixed;inset:0;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}#app{background:var(--g)}
+#mn{flex:1;overflow-y:auto;background:var(--bg);-webkit-overflow-scrolling:touch}
+#bn{display:flex;background:var(--g);color:#fff;flex:none;padding-bottom:env(safe-area-inset-bottom)}#bn button{flex:1;padding:9px 0 7px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;opacity:.85}#bn button.on{opacity:1;font-weight:700}
+.sec{background:var(--bg2);padding:10px 16px;font-size:17px}.chips{display:flex;gap:10px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--bd);border-radius:22px;padding:6px 20px;color:var(--g);background:var(--bg);font-size:15px}
+.tabs{display:flex;background:var(--bg2);padding:8px 10px;gap:4px;overflow-x:auto}.tabs button{padding:6px 16px;border-radius:20px;font-size:15px;white-space:nowrap}.tabs button.on{background:var(--bg);color:var(--tx);box-shadow:0 1px 4px #0002}
+.row{display:flex;align-items:center;gap:20px;padding:12px 18px;border-bottom:1px solid var(--bd);width:100%;text-align:left}.row .n{width:24px;font-size:17px}.row .m{flex:1;min-width:0}.row b{display:block;font-weight:400;color:var(--g);font-size:19px;line-height:1.3}.row small{color:var(--mu);font-size:13px}.row .a{font:30px/1.4 var(--ar);direction:rtl;color:var(--tx)}
+.note{padding:30px 22px;color:var(--mu);text-align:center}
+.lr{display:flex;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid var(--bd);width:100%;text-align:left}.lr .ic{width:44px;height:44px;border-radius:10px;background:var(--bg2);display:grid;place-items:center;color:var(--mu);flex:none}
+.pill{margin:12px 14px;display:flex;background:var(--bg2);border-radius:30px;padding:4px}.pill button{flex:1;padding:7px;border-radius:26px;font-size:15px}.pill button.on{background:var(--bg);box-shadow:0 1px 4px #0002}
+.inp{margin:6px 14px 8px;border:1px solid var(--bd);border-radius:30px;padding:10px 18px;width:calc(100% - 28px);background:var(--bg);outline:0}
+.card{margin:14px;border:1px solid var(--bd);border-radius:16px;padding:16px;background:var(--card)}.bar{height:8px;border-radius:5px;background:var(--bg2);overflow:hidden}.bar i{display:block;height:100%;background:var(--g)}
+.btn{background:var(--g);color:#fff;border-radius:24px;padding:10px 22px;font-size:15px}
+.wk{display:flex;justify-content:space-between;align-items:flex-end;height:170px;padding-top:10px}.wk div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--mu)}.wk i{width:38px;border-radius:20px;background:var(--bg2);display:block}.wk i.f{background:var(--g)}.wk span{width:34px;height:34px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;color:var(--tx);font-size:13px}
+/* layers */
+#sc{position:fixed;inset:0;background:#0007;z-index:40;opacity:0;pointer-events:none;transition:.2s}#sc.on{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:0;bottom:0;width:84vw;max-width:340px;background:var(--bg);z-index:50;overflow-y:auto;transition:transform .22s;padding-bottom:30px}
+#dl{left:0;transform:translateX(-105%);border-radius:0 24px 24px 0}#dl.on{transform:none}#sd{right:0;transform:translateX(105%)}#sd.on{transform:none}
+.dh{text-align:center;padding:26px 16px 12px;background:var(--bg2)}.dh .lg{width:68px;height:68px;border-radius:16px;background:var(--g);margin:0 auto 10px;display:grid;place-items:center;color:#fff;font:34px var(--ar)}.dh h2{margin:0;font-size:24px}.dh small{color:var(--mu)}
+.mi{display:flex;align-items:center;gap:18px;padding:14px 22px;width:100%;text-align:left;font-size:17px}.mi svg{color:var(--mu)}.mi:active{background:var(--bg2)}
+.sh2{padding:14px 22px 6px;color:#8a5a3c;font-size:15px}.sx{padding:10px 22px}.sx small{display:block;color:var(--mu);font-size:14px}
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:12px 8px;padding:6px 22px 14px}.rg label{display:flex;gap:12px;align-items:center;font-size:16px}.rg input{width:22px;height:22px;accent-color:var(--g);flex:none}
+.sl{display:flex;align-items:center;gap:12px;padding:0 22px 14px}.sl input{flex:1;accent-color:var(--g)}
+#sh{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-radius:18px 18px 0 0;max-height:78vh;overflow-y:auto;transform:translateY(105%);transition:transform .22s;padding:6px 0 calc(16px + env(safe-area-inset-bottom))}#sh.on{transform:none}
+#sh h3{margin:0;padding:12px 20px;font-size:18px;font-weight:400;color:var(--mu)}.op{display:flex;gap:14px;align-items:center;padding:12px 22px;width:100%;text-align:left;font-size:17px}.op input{width:22px;height:22px;accent-color:var(--g)}
+.lay{position:fixed;inset:0;z-index:20;background:var(--g);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);transform:translateX(100%);transition:transform .2s}.lay.on{transform:none}
+#rb{flex:1;overflow-y:auto;background:var(--bg);position:relative}
+.pstrip{display:flex;justify-content:space-between;background:var(--lt);padding:9px 14px;font-size:15px;position:sticky;top:0;z-index:2}.pstrip a{color:var(--g)}
+.sc2{display:flex;align-items:center;gap:16px;margin:16px;}.sc2 .kb{width:104px;height:80px;border-radius:12px;background:var(--bg2);display:grid;place-items:center;font-size:40px}.sc2 h2{margin:0;font-size:21px}.sc2 small{color:var(--mu)}
+.ay{padding:10px 16px 6px;border-bottom:1px solid var(--bd)}.ay.pl{background:var(--lt)}.ah{display:flex;align-items:center;gap:10px;color:var(--g)}.ah .an{font-size:15px;margin-right:auto}
+.wb{display:flex;flex-wrap:wrap;direction:rtl;gap:14px 22px;padding:10px 0 14px}.w{text-align:center;border-bottom:1px solid var(--bd);padding:0 4px 4px;min-width:50px}.w .wa{font:calc(var(--asz) + 2px)/1.9 var(--ar)}.w .wg{direction:ltr;font:13px/1.3 var(--body);color:var(--mu);margin-top:2px}.w .wg i{display:block;font-style:normal}
+.ar{direction:rtl;text-align:right;font:var(--asz)/2.3 var(--ar);padding:4px 0 8px}.ar i,.wa i{font-style:normal}
+html[data-tj=on] i.g{color:#D06900}html[data-tj=on] i.k{color:#B60000}html[data-tj=on] i.d{color:#B856C7}html[data-tj=on] i.n{color:#AAA}html[data-tj=on] i.q{color:#3065C5}html[data-tj=on] i.l{color:#309900}
+.tl{font-size:13px;color:var(--mu);margin:12px 0 2px}.tx{font-size:var(--bsz);line-height:1.7;margin:0}.tx sup{color:var(--g);font-weight:700;cursor:pointer;padding:0 3px}
+.ac{display:flex;gap:22px;color:var(--mu);padding:12px 2px 6px}.ac button.on{color:var(--g)}
+.tf{display:none;margin:4px 0 10px;border-top:1px dashed var(--bd)}.tf.show{display:block}.tf summary{padding:8px 0;color:var(--g);cursor:pointer}.tfb{font-size:calc(var(--bsz) - 1px);line-height:1.85}.tfb h4{margin:12px 0 4px;color:#a9793a}.tfb p{margin:5px 0}
+.rd{direction:rtl;text-align:justify;font:calc(var(--asz) + 4px)/2.5 var(--ar);padding:6px 18px 24px}.cn{display:inline-grid;place-items:center;min-width:1.15em;height:1.15em;border-radius:50%;background:var(--lt);color:var(--g);font:700 .5em/1 var(--body);margin:0 .3em}
+.bis{text-align:center;font:calc(var(--asz) + 4px)/2.2 var(--ar);direction:rtl;padding:8px 0}.nm{text-align:center}.nm h1{font:400 38px var(--body);color:#6b4a3a;margin:14px 0 0}.nm p{font-size:30px;margin:6px 0 10px}
+#rf{display:flex;background:var(--g);color:#fff;flex:none;padding-bottom:env(safe-area-inset-bottom)}#rf button{flex:1;padding:9px 0 7px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}#rf button.on{font-weight:700;background:#0002}
+#ab{display:none;background:var(--bg2);border-top:1px solid var(--bd);padding:6px 10px;align-items:center;gap:6px;flex:none;color:var(--tx)}#ab.on{display:flex}#ab .t{flex:1;min-width:0;font-size:14px;line-height:1.3}#ab .t small{color:var(--mu);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ab .ib.on{color:var(--g)}
+#tt{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222e;color:#fff;border-radius:20px;padding:8px 18px;z-index:99;font-size:14px;opacity:0;pointer-events:none;transition:.2s;max-width:86vw;text-align:center}#tt.on{opacity:1}
+.sr{display:block;width:100%;text-align:left;padding:10px 18px;border-bottom:1px solid var(--bd)}.sr mark{background:#f3d98a;color:#222}.sr small{display:block;color:var(--mu)}
+.ld{padding:40px;text-align:center;color:var(--mu)}.cl{display:flex;gap:10px;padding:6px 14px}.cl input{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px;background:var(--bg)}
+.tw{cursor:pointer;border-radius:6px}.tw:active,.w[data-i]:active{background:var(--lt)}.w[data-i]{cursor:pointer}
+.tw{cursor:pointer;border-radius:6px}.tw:active,.w[data-i]:active{background:var(--lt)}.w[data-i]{cursor:pointer}
+#sh.ws::before{content:'';display:block;width:42px;height:5px;border-radius:3px;background:var(--bd);margin:6px auto 0}
+#sh.ws h3{text-align:center;font-size:16px;font-weight:700;color:var(--tx);padding:12px 20px 16px}
+.wc{margin:0 16px;border:1.5px solid var(--bd);border-radius:26px;padding:20px 16px 18px;text-align:center}
+.wca{font:calc(var(--asz) + 12px)/1.9 var(--ar)}.wcm{font-size:24px;font-weight:700;margin-top:4px;line-height:1.4}.wcm2{color:var(--mu);font-size:17px;margin-top:4px}
+.wlr{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:22px;text-align:left}.wlr small{display:block;color:var(--mu);font-size:14px;margin-bottom:4px}
+.pill{display:block;background:var(--bg2);border-radius:30px;text-align:center;padding:4px 8px;color:var(--g);font:calc(var(--asz) + 2px)/1.8 var(--ar)}
+.wcx{display:block;width:calc(100% - 32px);margin:14px 16px 0;border-top:1px solid var(--bd);padding:16px 0 4px;text-align:center;color:var(--mu);font-size:18px}
+
+html[data-font=native][data-script=indo]{--ar:'Native IndoPak','Noorehuda',serif}html[data-font=native][data-script=uthmani]{--ar:'Native Uthmani','Ruqyah Hafs',serif}
+button,input,select,textarea{font:inherit;color:inherit}button:disabled{opacity:.35;cursor:default}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--g);outline-offset:3px}input,select,textarea{min-width:0;max-width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:9px 12px}input[type=checkbox],input[type=radio],input[type=range]{accent-color:var(--g)}[hidden]{display:none!important}#rb,#sh{touch-action:pan-y;overscroll-behavior:contain}#mn{overscroll-behavior:contain}#rb{scroll-padding-top:64px}#rb .ib:active{background:var(--lt)}#rb .pstrip{align-items:center;gap:6px;padding:2px 8px}.pstrip button{white-space:nowrap}.pstrip .ib{font-size:28px}.hd h1 button{max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}.nm p{font-family:var(--ar);font-size:34px}.nm h1{color:var(--g);font-size:30px}.nm small{display:block;margin:0 12px 12px}.ay{padding:12px 20px}.ay .ib{width:32px;height:30px;font:22px Arial}.ah .an{margin-right:auto}.w{display:block;border-radius:5px;color:var(--tx)}.w .wa,.w .wg{display:block}.w .wa{line-height:2.15}.w .wg{max-width:180px;line-height:1.5;font-size:14px;white-space:normal}.wb{gap:14px 16px}.ar,.rd,.bis,.wca,.wa{font-synthesis:none;letter-spacing:normal}.ar{line-height:2.5}.rd{padding:14px 22px 26px;line-height:2.8}.rd i{font-style:normal}.readverse{cursor:pointer}.readverse.pl{background:var(--lt);border-radius:4px}.ac{gap:12px;justify-content:flex-end}.ac button{padding:8px;min-width:36px;min-height:40px}.endnav{display:flex;justify-content:space-between;gap:14px;padding:24px 16px 36px}.endnav .btn{padding:9px 16px}.flash{outline:2px solid var(--g);outline-offset:-2px}.sheethead{display:flex;align-items:center;position:sticky;top:-6px;background:var(--bg);z-index:4;border-bottom:1px solid var(--bd);min-height:52px}.sheethead h3{flex:1}.sheethead .ib{color:var(--mu);margin-right:10px}.sheethead .ib:active{background:var(--bg2)}#sh.ws h3{padding:12px;font-size:16px}#sh{max-height:86dvh}.prose{padding:12px 22px 22px;font-size:var(--bsz);line-height:1.85}.prose h4{color:var(--g);margin:18px 0 8px}.prose p{margin:8px 0 14px}.prose audio{width:100%;margin:8px 0}.prose ul{padding-left:24px}.prose .card{margin:14px 0}.formgrid{display:grid;gap:16px;padding:20px}.formgrid label{display:grid;gap:5px}.formgrid label.checkline{display:flex;align-items:center;gap:10px}.formgrid input[type=checkbox]{width:22px;height:22px}.formgrid textarea{width:100%;resize:vertical}.formgrid .btn{width:100%}.checkline input{flex:none}.formgrid small{color:var(--mu)}.wordnav{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px}.wordnav small{color:var(--mu);white-space:nowrap}.wordnav .btn{padding:9px 16px}.wlr .pill{width:100%;margin:0}.wordactions .btn{flex:1;padding:8px;font-size:15px}.wc{margin-top:14px;padding-top:12px}.wca{line-height:2.3}.corpusdetail{margin-top:16px;color:var(--mu);font-size:15px}.corpusdetail .ar{text-align:center}.singlebody .ay{border:0}.singlebody .tf{padding:0 4px}.copybox{width:calc(100% - 32px);margin:16px;min-height:220px}.libtabs{display:flex;gap:8px;margin:14px;background:var(--bg2);padding:5px;border-radius:30px}.libtabs button{flex:1;border-radius:24px;padding:8px}.libtabs .on{background:var(--bg);color:var(--g)}.libitem{display:flex;align-items:center;border-bottom:1px solid var(--bd)}.libitem .lr{border:0;flex:1}.libitem>.ib{margin-right:10px;color:var(--mu)}.session{display:flex;justify-content:space-between;align-items:center;gap:12px}.session>button{text-align:left;flex:1}.session label{display:flex;gap:8px;align-items:center}.session input{width:22px;height:22px}.card h2{font-size:23px;color:var(--g);font-weight:400;margin:0 0 10px}.indexfind{padding:14px;display:grid;gap:8px}.indexfind small{color:var(--mu)}.indexfind input{width:100%}.row .n{min-width:32px}.searchform{gap:10px}.searchfilters{display:flex;gap:8px}.searchfilters select{flex:1;width:50%;font-size:15px}.searchstatus{padding:0 20px 10px;color:var(--mu)}.sr small{font-size:16px;line-height:1.7}.sr b{font-weight:400;color:var(--g)}#ab,#ab2{background:var(--bg2);border-top:1px solid var(--bd);color:var(--tx);flex:none}.audiowrap{width:100%;min-width:0;padding:3px 8px}.audioline{display:flex;align-items:center;gap:2px}.audioline .ib{width:34px;height:36px}.audiotitle{flex:1;min-width:0;text-align:left;font-size:14px;line-height:1.35}.audiotitle small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mu);font-size:12px}.seekrow{display:flex;gap:9px;align-items:center;padding:0 5px;font:11px Arial;color:var(--mu)}.seekrow input{flex:1;width:0;padding:0;height:18px;border:0;background:transparent}#tt{pointer-events:none}.cl{flex-wrap:wrap}.cl input{min-width:100px}.prose [lang=en]{font:15px/1.8 Arial,sans-serif}.rg label{line-height:1.4}.sl input{min-width:0}.mi small{overflow-wrap:anywhere}.topicrow small{font-size:13px}
+@media(min-width:800px){#rb>.ay,#rb>.rd,#rb>.nm,#rb>.bis,#rb>.endnav{max-width:1050px;margin-left:auto;margin-right:auto}#sh{max-width:760px;left:50%;right:auto;width:100%;transform:translate(-50%,105%)}#sh.on{transform:translate(-50%,0)}.dr{max-width:380px}.wb{gap:20px 28px}.w .wg{font-size:16px}#mn>.row,#mn>.lr,#mn>.card{max-width:1000px;margin-left:auto;margin-right:auto}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.enfootnotes{margin:12px 0;color:var(--mu);font:14px/1.7 Arial,sans-serif}.enfootnotes summary{font:15px var(--body);cursor:pointer;color:var(--g)}.enfootnotes p{margin:8px 0}.segments{display:grid;gap:8px;margin:12px 0}.segments>div{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--bd);padding:7px}.segments .ar{font-size:25px;line-height:1.8;padding:0}.segments small{direction:ltr;text-align:left;font:12px/1.5 Arial;overflow-wrap:anywhere;max-width:50%}.grammarbody h4{font:16px var(--body);color:var(--g);text-align:left;margin:16px 0 6px}.grammarbody .grammarar{font:24px/2.2 'Native Uthmani',serif;text-align:right;color:var(--tx);margin:8px 0}.verbforms{display:grid;grid-template-columns:1fr 1fr;gap:8px}.verbforms>div{background:var(--bg2);border-radius:10px;padding:8px}.verbforms small{display:block;font:13px var(--body)}.verbforms span{display:block;font:28px/1.8 'Native Uthmani',serif}
+
+/* Responsive surah directory and numbered reader selector. */
+.surah-grid{display:grid;grid-template-columns:minmax(0,1fr)}
+#sh .pickrow{display:flex;align-items:center;gap:14px}
+.picknumber{display:inline-grid;place-items:center;flex:0 0 38px;min-width:38px;color:var(--g);font-size:18px;font-variant-numeric:tabular-nums;line-height:1.4}
+.pickname{min-width:0;text-align:left}
+@media(min-width:900px){
+ .home-layout{width:100%;max-width:1168px;margin:0 auto;padding:18px 24px 32px}
+ .surah-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;padding:14px}
+ .surah-grid>.row{min-width:0;min-height:92px;margin:0;border:1px solid var(--bd);border-radius:12px;padding:14px 18px;gap:16px;background:var(--card)}
+ .surah-grid>.row .n{min-width:30px;width:30px;flex:none}
+ .surah-grid>.row .a{flex:none;font-size:30px;max-width:44%;overflow-wrap:anywhere;text-align:right}
+ .surah-grid>.row:hover{background:var(--bg2)}
+}
+</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/favicon.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="আল কুরআন"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex,nofollow">
+<style>#pwaI{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:200;background:#fff;color:#2d6a3a;border:1.5px solid #4f9157;border-radius:30px;padding:10px 18px;font:600 15px system-ui,sans-serif;box-shadow:0 6px 22px #0003}</style></head>
+<body>
+<div id="app"><div class="hd" id="hd"></div><div id="mn"></div><div id="ab"></div><nav id="bn"></nav></div>
+<div class="lay" id="rl"><div class="hd" id="rh"></div><div id="rb"></div><div id="ab2"></div><div id="rf"></div></div>
+<div id="sc"></div>
+<aside class="dr" id="dl"></aside><aside class="dr" id="sd"></aside>
+<div id="sh"></div><div id="tt"></div>
+
+<script type="application/json" id="meta">[[1, "আল-ফাতিহা", 7, "الفاتحة", "সূচনা"], [2, "আল-বাক্বারাহ", 286, "البقرة", "গাভী"], [3, "আলে-ইমরান", 200, "آل عمران", "ইমরানের পরিবার"], [4, "আন-নিসা", 176, "النساء", "নারী"], [5, "আল-মায়িদাহ", 120, "المائدة", "পরিবেশিত টেবিল"], [6, "আল-আনয়াম", 165, "الأنعام", "গৃহপালিত পশু"], [7, "আল-আরাফ", 206, "الأعراف", "উঁচু স্থান"], [8, "আল-আনফাল", 75, "الأنفال", "যুদ্ধলব্ধ সম্পদ"], [9, "আত-তওবা", 129, "التوبة", "অনুতাপ"], [10, "ইউনুস", 109, "يونس", "ইউনুস (আ.)"], [11, "হুদ", 123, "هود", "হূদ (আ.)"], [12, "ইউসুফ", 111, "يوسف", "ইউসুফ (আ.)"], [13, "আর-রাদ", 43, "الرعد", "বজ্র"], [14, "ইবরাহীম", 52, "إبراهيم", "ইবরাহীম (আ.)"], [15, "আল-হিজর", 99, "الحجر", "হিজর অঞ্চল"], [16, "আন্-নহল", 128, "النحل", "মৌমাছি"], [17, "বনী ইসরাঈল", 111, "الإسراء", "রাতের ভ্রমণ"], [18, "আল-কাহাফ", 110, "الكهف", "গুহা"], [19, "মারইয়াম", 98, "مريم", "মারইয়াম (আ.)"], [20, "ত্ব-হা", 135, "طه", "ত্বা-হা"], [21, "আল-আম্বিয়া", 112, "الأنبياء", "নবীগণ"], [22, "আল-হাজ্জ", 78, "الحج", "হজ্জ"], [23, "আল-মু’মিনূন", 118, "المؤمنون", "মুমিনগণ"], [24, "আন্-নূর", 64, "النور", "আলো"], [25, "আল-ফুরকান", 77, "الفرقان", "সত্যাসত্য নিরূপক"], [26, "আশ-শুআরা", 227, "الشعراء", "কবিগণ"], [27, "আন্-নমল", 93, "النمل", "পিঁপড়া"], [28, "আল-ক্বাসাস", 88, "القصص", "কাহিনি"], [29, "আল-আনকাবুত", 69, "العنكبوت", "মাকড়সা"], [30, "আর-রূম", 60, "الروم", "রোমান"], [31, "লুকমান", 34, "لقمان", "লুকমান (আ.)"], [32, "আস-সাজদাহ", 30, "السجدة", "সিজদা"], [33, "আল-আহযাব", 73, "الأحزاب", "সম্মিলিত বাহিনী"], [34, "সাবা", 54, "سبأ", "সাবা"], [35, "ফাতির", 45, "فاطر", "স্রষ্টা"], [36, "ইয়া-সীন", 83, "يس", "ইয়া-সীন"], [37, "আস-সাফ্ফাত", 182, "الصافات", "সারিবদ্ধ"], [38, "সোয়াদ", 88, "ص", "সোয়াদ"], [39, "আয-যুমার", 75, "الزمر", "দলসমূহ"], [40, "আল-মু’মিন", 85, "غافر", "ক্ষমাশীল"], [41, "হামীম-আস-সাজদাহ", 54, "فصلت", "বিশদ ব্যাখ্যা"], [42, "আশ-শূরা", 53, "الشورى", "পরামর্শ"], [43, "আয-যুখরুফ", 89, "الزخرف", "স্বর্ণ-অলংকার"], [44, "আদ-দুখান", 59, "الدخان", "ধোঁয়া"], [45, "আল-জাসিয়া", 37, "الجاثية", "নতজানু"], [46, "আল-আহক্বাফ", 35, "الأحقاف", "বালুকাময় ভূমি"], [47, "মুহাম্মাদ", 38, "محمد", "মুহাম্মাদ (সা.)"], [48, "আল-ফাতাহ্", 29, "الفتح", "বিজয়"], [49, "আল-হুজুরাত", 18, "الحجرات", "কক্ষসমূহ"], [50, "ক্বা-ফ", 45, "ق", "ক্বাফ"], [51, "আয-যারিয়াত", 60, "الذاريات", "বিক্ষেপকারী বায়ু"], [52, "আত-তূর", 49, "الطور", "পর্বত"], [53, "আন-নাজম", 62, "النجم", "নক্ষত্র"], [54, "আল-ক্বামার", 55, "القمر", "চাঁদ"], [55, "আর-রহমান", 78, "الرحمن", "পরম করুণাময়"], [56, "আল-ওয়াক্বিয়া", 96, "الواقعة", "অবশ্যম্ভাবী ঘটনা"], [57, "আল-হাদীদ", 29, "الحديد", "লোহা"], [58, "আল-মুজাদিলাহ", 22, "المجادلة", "বিতর্ককারিণী"], [59, "আল-হাশর", 24, "الحشر", "সমাবেশ"], [60, "আল-মুমতাহিনাহ", 13, "الممتحنة", "পরীক্ষিতা নারী"], [61, "আস-সফ", 14, "الصف", "সারি"], [62, "আল-জুমুয়াহ", 11, "الجمعة", "জুমুআ"], [63, "আল-মুনাফিকুন", 11, "المنافقون", "কপটগণ"], [64, "আত-তাগাবুন", 18, "التغابن", "হার-জিত"], [65, "আত-তালাক", 12, "الطلاق", "তালাক"], [66, "আত-তাহরীম", 12, "التحريم", "নিষিদ্ধকরণ"], [67, "আল-মুলক", 30, "الملك", "কর্তৃত্ব"], [68, "আল-ক্বলম", 52, "القلم", "কলম"], [69, "আল-হাক্বাহ্", 52, "الحاقة", "নিশ্চিত সত্য"], [70, "আল-মাআরিজ", 44, "المعارج", "ঊর্ধ্বারোহণের সিঁড়ি"], [71, "নূহ", 28, "نوح", "নূহ (আ.)"], [72, "আল-জ্বিন", 28, "الجن", "জিন"], [73, "আল-মুজ্জাম্মিল", 20, "المزمل", "বস্ত্রাবৃত"], [74, "আল-মুদ্দাস্সির", 56, "المدثر", "চাদরাবৃত"], [75, "আল-কিয়ামাহ", 40, "القيامة", "কিয়ামত"], [76, "আদ-দাহর", 31, "الإنسان", "মানুষ"], [77, "আল-মুরসালাত", 50, "المرسلات", "প্রেরিত বায়ু"], [78, "আন-নাবা", 40, "النبأ", "মহাসংবাদ"], [79, "আন-নাযিআত", 46, "النازعات", "উৎপাটনকারী"], [80, "আবাসা", 42, "عبس", "ভ্রূকুঞ্চন"], [81, "আত-তাকভীর", 29, "التكوير", "অন্ধকারাচ্ছন্ন করা"], [82, "আল-ইনফিতার", 19, "الانفطار", "বিদীর্ণ হওয়া"], [83, "আল-মুতাফফিফীন", 36, "المطففين", "মাপে কম দানকারী"], [84, "আল-ইনশিক্বাক", 25, "الانشقاق", "বিদীর্ণ করা"], [85, "আল-বুরুজ", 22, "البروج", "নক্ষত্রপুঞ্জ"], [86, "আত-তারিক্ব", 17, "الطارق", "রাতের আগন্তুক"], [87, "আল-আ’লা", 19, "الأعلى", "সর্বোচ্চ"], [88, "আল-গাশিয়াহ", 26, "الغاشية", "আচ্ছন্নকারী"], [89, "আল-ফাজর", 30, "الفجر", "ভোর"], [90, "আল-বালাদ", 20, "البلد", "নগর"], [91, "আশ-শামস", 15, "الشمس", "সূর্য"], [92, "আল-লাইল", 21, "الليل", "রাত"], [93, "আদ-দুহা", 11, "الضحى", "পূর্বাহ্ন"], [94, "আলাম নাশরাহ", 8, "الشرح", "প্রশস্তকরণ"], [95, "আত-ত্বীন", 8, "التين", "ডুমুর"], [96, "আল-আলাক্ব", 19, "العلق", "রক্তপিণ্ড"], [97, "আল-ক্বাদর", 5, "القدر", "মহিমান্বিত রাত"], [98, "আল-বাইয়েনাহ", 8, "البينة", "সুস্পষ্ট প্রমাণ"], [99, "আয-যিলযাল", 8, "الزلزلة", "ভূকম্পন"], [100, "আল-আদিয়াত", 11, "العاديات", "ধাবমান অশ্ব"], [101, "আল-ক্বারিয়াহ", 11, "القارعة", "মহাবিপর্যয়"], [102, "আত-তাকাসুর", 8, "التكاثر", "প্রাচুর্যের প্রতিযোগিতা"], [103, "আল-আসর", 3, "العصر", "কাল"], [104, "আল-হুমাযাহ", 9, "الهمزة", "পরনিন্দাকারী"], [105, "আল-ফীল", 5, "الفيل", "হাতি"], [106, "আল-কুরাইশ", 4, "قريش", "কুরাইশ"], [107, "আল-মাউন", 7, "الماعون", "নিত্যব্যবহার্য বস্তু"], [108, "আল-কাউসার", 3, "الكوثر", "প্রাচুর্য"], [109, "আল-কাফিরূন", 6, "الكافرون", "অবিশ্বাসীগণ"], [110, "আন-নাসর", 3, "النصر", "সাহায্য"], [111, "আল-মাসাদ (লাহাব)", 5, "المسد", "খেজুর-আঁশ"], [112, "আল-ইখলাস", 4, "الإخلاص", "একনিষ্ঠতা"], [113, "আল-ফালাক্ব", 5, "الفلق", "ঊষা"], [114, "আন-নাস", 6, "الناس", "মানুষ"]]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){'use strict';
+var $=function(s){return document.querySelector(s)},BD='০১২৩৪৫৬৭৮৯',bn=function(n){return String(n).replace(/\d/g,function(d){return BD[d]})};
+var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+var M=JSON.parse($('#meta').textContent),H=document.documentElement;
+var JZ=[[1,1],[2,142],[2,253],[3,93],[4,24],[4,148],[5,82],[6,111],[7,88],[8,41],[9,93],[11,6],[12,53],[15,1],[17,1],[18,75],[21,1],[23,1],[25,21],[27,56],[29,46],[33,31],[36,28],[39,32],[41,47],[46,1],[51,31],[58,1],[67,1],[78,1]];
+var TR={en:'English - Sahih International',m:'Bangla - Muhiuddin Khan',b:'Bangla - Bayaan Foundation',t:'Bangla - তাফহীমুল কুরআন'};
+var TF={k:'তাফসীর ইবনে কাসীর',z:'তাফসীর আবু বকর যাকারিয়া',f:'তাফসীর ফাতহুল মাজীদ',b:'তাফসীর আহসানুল বায়ান',t:'তাফহীমুল কুরআন (টীকা)'};
+var RC=[['Alafasy_128kbps','মিশারী রাশিদ আল-আফাসী'],['Abdul_Basit_Murattal_192kbps','আব্দুল বাসিত (মুরাত্তাল)'],['Abdul_Basit_Mujawwad_128kbps','আব্দুল বাসিত (মুজাওয়াদ)'],['Husary_128kbps','মাহমুদ খলীল আল-হুসারী'],['Husary_Mujawwad_128kbps','আল-হুসারী (মুজাওয়াদ)'],['Abdurrahmaan_As-Sudais_192kbps','আব্দুর রহমান আস-সুদাইস'],['Saood_ash-Shuraym_128kbps','সাউদ আশ-শুরাইম'],['MaherAlMuaiqly128kbps','মাহের আল-মুআইক্বিলী'],['Hudhaify_128kbps','আলী আল-হুযাইফী'],['Minshawy_Murattal_128kbps','মুহাম্মাদ সিদ্দিক আল-মিনশাবী'],['Abu_Bakr_Ash-Shaatree_128kbps','আবু বকর আশ-শাত্বরী'],['Hani_Rifai_192kbps','হানী আর-রিফাঈ'],['Ghamadi_40kbps','সাদ আল-গামিদী'],['Nasser_Alqatami_128kbps','নাসের আল-কাতামী'],['Yasser_Ad-Dussary_128kbps','ইয়াসের আদ-দাউসারী'],['Salah_Al_Budair_128kbps','সালাহ আল-বুদাইর'],['Abdullah_Basfar_192kbps','আব্দুল্লাহ বাসফার'],['Muhammad_Ayyoub_128kbps','মুহাম্মাদ আইয়ুব'],['Muhammad_Jibreel_128kbps','মুহাম্মাদ জিবরীল'],['Ali_Jaber_64kbps','আলী জাবের'],['Mohammad_al_Tablaway_128kbps','মুহাম্মাদ আত-তাবলাবী'],['Ibrahim_Akhdar_32kbps','ইবরাহীম আল-আখদার']];
+var FO={noorehuda:'Noorehuda (ইন্দোপাক/এশিয়ান)',indopak:'AlQuran IndoPak',mushaf:'Ruqyah Al-Mushaf',hafs:'Hafs (Uthmani)',muhammadi:'Muhammadi Quranic',saleem:'PDMS Saleem Quran',alqalam:'Al Qalam Quran',nabi:'Nabi',neirizi:'Neirizi'};
+var I=function(p,z){z=z||24;return '<svg viewBox="0 0 24 24" width="'+z+'" height="'+z+'"><path d="'+p+'"/></svg>'};
+var P={menu:'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z',search:'M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',play:'M8 5v14l11-7z',pause:'M6 19h4V5H6v14zm8-14v14h4V5h-4z',bm:'M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z',tune:'M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z',home:'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',x:'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',note:'M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z',cap:'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z',grid:'M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z',lib:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',stat:'M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z',cal:'M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z',dn:'M7 10l5 5 5-5z',book:'M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',lines:'M3 9h18v2H3zm0 4h14v2H3zM3 5h18v2H3z',as:'M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6zM7.41 13.84L12 18.42l4.59-4.58L18 15.25l-6 6-6-6z',tr:'M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z',jump:'M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z',gear:'M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.61l-1.92-3.32a.5.5 0 0 0-.59-.22l-2.39.96a7 7 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.48-.41h-3.84a.5.5 0 0 0-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.5.5 0 0 0-.59.22L2.74 8.87a.5.5 0 0 0 .12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.5.5 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.5.5 0 0 0-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z',bolt:'M7 2v11h3v9l7-12h-4l4-8z'};
+var S={v:4.1,theme:'light',font:'native',script:'indo',asz:31,bsz:19,mode:'trans',view:'sura',c:{ar:1,tr:1,tf:0,wbw:1,tj:1},trs:['t'],tfs:['t'],wl:'en',rec:RC[0][0],last:[],pins:[],notes:{},st:{},plan:0,folders:['সাধারণ'],pinFolders:{},rtl:1,follow:1,speed:1};
+var defaults=JSON.parse(JSON.stringify(S));
+try{var old=JSON.parse(localStorage.getItem('qa_s')||'{}');Object.assign(S,old);S.c=Object.assign(defaults.c,old.c||{});if(old.v!==4.1){S.v=4.1;S.script='indo';S.font='native';S.view='sura'}}catch(e){}
+FO.native='মূল অ্যাপের ফন্ট';
+function save(){try{localStorage.setItem('qa_s',JSON.stringify(S))}catch(e){toast('সংরক্ষণের জায়গা নেই। ব্যাকআপ এক্সপোর্ট করুন।')}}
+function apply(){if(!FO[S.font])S.font='native';H.dataset.theme=S.theme;H.dataset.font=S.font;H.dataset.script=S.script;H.dataset.tj=S.c.tj?'on':'off';H.style.setProperty('--asz',S.asz+'px');H.style.setProperty('--bsz',S.bsz+'px')}
+var toastT;function toast(t){var e=$('#tt');e.textContent=t;e.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){e.classList.remove('on')},2600)}
+var cache=new Map(),pending=new Map(),X=null;
+var DMAP={"extra":"extra.e2622694.bin","c1":"c1.dc19391f.bin","t1":"t1.521cdb17.bin","c2":"c2.dba991d2.bin","t2":"t2.715e2947.bin","c3":"c3.eba8d19e.bin","t3":"t3.2a48f235.bin","c4":"c4.600962b1.bin","t4":"t4.c35dc56a.bin","c5":"c5.f9ce88f7.bin","t5":"t5.3a58140e.bin","c6":"c6.50c68875.bin","t6":"t6.41762e69.bin","c7":"c7.20f951af.bin","t7":"t7.6d357116.bin","c8":"c8.94274154.bin","t8":"t8.33c0653c.bin","c9":"c9.03d1d99d.bin","t9":"t9.e77b38ad.bin","c10":"c10.8bd05b9e.bin","t10":"t10.0930eead.bin","c11":"c11.bb63cde5.bin","t11":"t11.ea7712a4.bin","c12":"c12.a7385ab3.bin","t12":"t12.8bde1ccd.bin","c13":"c13.e7787483.bin","t13":"t13.b62680c5.bin","c14":"c14.21f807b7.bin","t14":"t14.5b178825.bin","c15":"c15.30cc8bff.bin","t15":"t15.ad94d013.bin","c16":"c16.80923d1a.bin","t16":"t16.a9894dc0.bin","c17":"c17.24d86801.bin","t17":"t17.ef78cc44.bin","c18":"c18.0f24354c.bin","t18":"t18.273297c6.bin","c19":"c19.924aff3c.bin","t19":"t19.dd7fc1bf.bin","c20":"c20.bfbef8ce.bin","t20":"t20.b3039513.bin","c21":"c21.4c36c6f8.bin","t21":"t21.9e2bef72.bin","c22":"c22.00744f49.bin","t22":"t22.3d27d8b8.bin","c23":"c23.9811af81.bin","t23":"t23.94ba3b31.bin","c24":"c24.1644795b.bin","t24":"t24.ce6ac3a7.bin","c25":"c25.45fa36d1.bin","t25":"t25.b50c6f11.bin","c26":"c26.2b91de77.bin","t26":"t26.2f95f51f.bin","c27":"c27.f1aa5a2b.bin","t27":"t27.115c3afb.bin","c28":"c28.cd4ff067.bin","t28":"t28.75069e74.bin","c29":"c29.64160cb0.bin","t29":"t29.e9715a54.bin","c30":"c30.364ad1ca.bin","t30":"t30.a379b7df.bin","c31":"c31.50f826b9.bin","t31":"t31.1e56461d.bin","c32":"c32.fd53d35b.bin","t32":"t32.8f93f153.bin","c33":"c33.69bd4b24.bin","t33":"t33.bd34c572.bin","c34":"c34.e6ce946b.bin","t34":"t34.bd9284ea.bin","c35":"c35.39a9d2bd.bin","t35":"t35.352d0070.bin","c36":"c36.4967bece.bin","t36":"t36.909de050.bin","c37":"c37.81db3d30.bin","t37":"t37.89fb8e55.bin","c38":"c38.c11fe0c1.bin","t38":"t38.eecb599c.bin","c39":"c39.d3d6514b.bin","t39":"t39.474c38d9.bin","c40":"c40.ae787009.bin","t40":"t40.fa414aae.bin","c41":"c41.e03a3975.bin","t41":"t41.5b32288d.bin","c42":"c42.c44e4326.bin","t42":"t42.0af75e86.bin","c43":"c43.acfbf285.bin","t43":"t43.5d07b532.bin","c44":"c44.c2364e1c.bin","t44":"t44.d51941c5.bin","c45":"c45.a74515cc.bin","t45":"t45.46203f5d.bin","c46":"c46.dee549a2.bin","t46":"t46.45eb694a.bin","c47":"c47.98ab31a6.bin","t47":"t47.a2b0e2e2.bin","c48":"c48.aacf8570.bin","t48":"t48.d5696948.bin","c49":"c49.695d304b.bin","t49":"t49.fd60093e.bin","c50":"c50.de14e483.bin","t50":"t50.e509bc16.bin","c51":"c51.61679ca6.bin","t51":"t51.0ab446de.bin","c52":"c52.25bb0647.bin","t52":"t52.81252071.bin","c53":"c53.0942392c.bin","t53":"t53.1f3b2845.bin","c54":"c54.77360706.bin","t54":"t54.98360d6c.bin","c55":"c55.977fc362.bin","t55":"t55.babda9d2.bin","c56":"c56.8797217f.bin","t56":"t56.35203031.bin","c57":"c57.a13a4f2b.bin","t57":"t57.894635bc.bin","c58":"c58.6bea9bcc.bin","t58":"t58.522913d6.bin","c59":"c59.b5385872.bin","t59":"t59.b1e06204.bin","c60":"c60.ef71dad9.bin","t60":"t60.c7bfe26d.bin","c61":"c61.4e1c3191.bin","t61":"t61.9bf44e4f.bin","c62":"c62.a846f684.bin","t62":"t62.9b812fa8.bin","c63":"c63.5b125b1e.bin","t63":"t63.36567376.bin","c64":"c64.89c5d7f3.bin","t64":"t64.a819df96.bin","c65":"c65.825090e1.bin","t65":"t65.39d12ecc.bin","c66":"c66.40294e59.bin","t66":"t66.6a7006c0.bin","c67":"c67.18a10900.bin","t67":"t67.8aa3f504.bin","c68":"c68.a0d0a09b.bin","t68":"t68.43d70a68.bin","c69":"c69.6349112f.bin","t69":"t69.0fb07db6.bin","c70":"c70.1955e4cb.bin","t70":"t70.0c4c79d2.bin","c71":"c71.0fe4a10c.bin","t71":"t71.b0bc6903.bin","c72":"c72.9af7b03c.bin","t72":"t72.dc51f402.bin","c73":"c73.87e623fd.bin","t73":"t73.2d0b568e.bin","c74":"c74.2e7108e8.bin","t74":"t74.77d23460.bin","c75":"c75.0a211a94.bin","t75":"t75.ed57e595.bin","c76":"c76.68297145.bin","t76":"t76.b435c8e9.bin","c77":"c77.dca428d3.bin","t77":"t77.f2a67a08.bin","c78":"c78.5f550080.bin","t78":"t78.f9013582.bin","c79":"c79.16189eff.bin","t79":"t79.9afa43fc.bin","c80":"c80.9041c1ac.bin","t80":"t80.d2eaa9d2.bin","c81":"c81.45c06bb4.bin","t81":"t81.c283c3fe.bin","c82":"c82.18e475d6.bin","t82":"t82.5bef82af.bin","c83":"c83.7a9ce722.bin","t83":"t83.9d5d4d29.bin","c84":"c84.50cff05b.bin","t84":"t84.89b439e9.bin","c85":"c85.2bfb41f2.bin","t85":"t85.9ed2a723.bin","c86":"c86.9afd3b7f.bin","t86":"t86.7256ef89.bin","c87":"c87.5219fe27.bin","t87":"t87.33a4a6de.bin","c88":"c88.09ecc29e.bin","t88":"t88.086e6b44.bin","c89":"c89.d56be501.bin","t89":"t89.ed57b134.bin","c90":"c90.4df3eab1.bin","t90":"t90.e625bd8e.bin","c91":"c91.3446273d.bin","t91":"t91.4e488868.bin","c92":"c92.1e705b04.bin","t92":"t92.58852e05.bin","c93":"c93.f72947c5.bin","t93":"t93.41e478bb.bin","c94":"c94.97f5fbd3.bin","t94":"t94.f85148a6.bin","c95":"c95.df3552e8.bin","t95":"t95.547318b9.bin","c96":"c96.24e63202.bin","t96":"t96.313c1d9c.bin","c97":"c97.996a1aac.bin","t97":"t97.f33e7884.bin","c98":"c98.7888c269.bin","t98":"t98.b0e4ddfe.bin","c99":"c99.0ef20e83.bin","t99":"t99.4be35013.bin","c100":"c100.798894eb.bin","t100":"t100.c76c6401.bin","c101":"c101.95fb52dc.bin","t101":"t101.f92dbb9c.bin","c102":"c102.94de339b.bin","t102":"t102.666bdd89.bin","c103":"c103.0df31cbf.bin","t103":"t103.2ef2118e.bin","c104":"c104.168df11c.bin","t104":"t104.0c2a3fe8.bin","c105":"c105.796b2421.bin","t105":"t105.b3e1ecb0.bin","c106":"c106.92bc96a2.bin","t106":"t106.8ccce1a6.bin","c107":"c107.190d1645.bin","t107":"t107.d9c091a8.bin","c108":"c108.e2daa880.bin","t108":"t108.1967286e.bin","c109":"c109.f75e4dc1.bin","t109":"t109.bec8b7af.bin","c110":"c110.02f65926.bin","t110":"t110.a58113ac.bin","c111":"c111.4db99191.bin","t111":"t111.46bf2c29.bin","c112":"c112.21a1d34e.bin","t112":"t112.1de3f48d.bin","c113":"c113.9a92c3f8.bin","t113":"t113.06967df0.bin","c114":"c114.24851702.bin","t114":"t114.6b5cd2cb.bin","xb":"xb.9a762038.bin","g1":"g1.52f0f100.bin","g2":"g2.24933721.bin","g3":"g3.2f8e13f9.bin","g4":"g4.86d7e100.bin","g5":"g5.89ab9d55.bin","g6":"g6.5b96bb51.bin","g7":"g7.0659056a.bin","g8":"g8.690c2054.bin","g9":"g9.7d092c93.bin","g10":"g10.04be6546.bin","g11":"g11.93c6ca15.bin","g12":"g12.e74d7760.bin","g13":"g13.68b78462.bin","g14":"g14.eb96a08a.bin","g15":"g15.4448559b.bin","g16":"g16.40d2082f.bin","g17":"g17.47c6af7b.bin","g18":"g18.40936fb3.bin","g19":"g19.daee94ca.bin","g20":"g20.8544abd2.bin","g21":"g21.785f44a0.bin","g22":"g22.42765878.bin","g23":"g23.48cbf6ad.bin","g24":"g24.e3468979.bin","g25":"g25.0befb659.bin","g26":"g26.756cd28e.bin","g27":"g27.465d08a8.bin","g28":"g28.a69aa8cc.bin","g29":"g29.0f4e6fd7.bin","g30":"g30.49bc3648.bin","g31":"g31.2811adfa.bin","g32":"g32.86b76288.bin","g33":"g33.81526cb1.bin","g34":"g34.ed9c6403.bin","g35":"g35.793d25ea.bin","g36":"g36.cecfdfa4.bin","g37":"g37.70295a05.bin","g38":"g38.cdd49fbc.bin","g39":"g39.ca89916e.bin","g40":"g40.2d636034.bin","g41":"g41.53bc1063.bin","g42":"g42.5fb0843e.bin","g43":"g43.c6bffe4b.bin","g44":"g44.0c6a8521.bin","g45":"g45.7ef36f89.bin","g46":"g46.abee5b82.bin","g47":"g47.e18378d0.bin","g48":"g48.c0dda371.bin","g49":"g49.954eaf94.bin","g50":"g50.231147b8.bin","g51":"g51.1974855b.bin","g52":"g52.49746cb2.bin","g53":"g53.588cf45b.bin","g54":"g54.561d6009.bin","g55":"g55.62924594.bin","g56":"g56.73852dbd.bin","g57":"g57.3626e798.bin","g58":"g58.535ce13a.bin","g59":"g59.c299b69b.bin","g60":"g60.9f6dae7a.bin","g61":"g61.94bcc553.bin","g62":"g62.10a899eb.bin","g63":"g63.884b967b.bin","g64":"g64.e1ed1080.bin","g65":"g65.11feb729.bin","g66":"g66.1bcda12e.bin","g67":"g67.7e3dda38.bin","g68":"g68.eceb7d87.bin","g69":"g69.0c36492b.bin","g70":"g70.3ced8b10.bin","g71":"g71.275db5a0.bin","g72":"g72.a1ea5e9c.bin","g73":"g73.76d09122.bin","g74":"g74.0faf63e5.bin","g75":"g75.b19b62eb.bin","g76":"g76.42961452.bin","g77":"g77.ab4ce3f8.bin","g78":"g78.b47605a1.bin","g79":"g79.05fd6963.bin","g80":"g80.61edc9e4.bin","g81":"g81.c6dfddfb.bin","g82":"g82.aab49f5d.bin","g83":"g83.55bf602e.bin","g84":"g84.52be6099.bin","g85":"g85.1863c58a.bin","g86":"g86.5fadbf04.bin","g87":"g87.28b69ec8.bin","g88":"g88.93467f51.bin","g89":"g89.d823fe6c.bin","g90":"g90.e8baa1df.bin","g91":"g91.58f05a41.bin","g92":"g92.4e108e56.bin","g93":"g93.3bbfc755.bin","g94":"g94.4dad7a2b.bin","g95":"g95.b9617b42.bin","g96":"g96.18a85820.bin","g97":"g97.3ac0202a.bin","g98":"g98.2405cefb.bin","g99":"g99.bb3a87a0.bin","g100":"g100.490a32b0.bin","g101":"g101.8328affa.bin","g102":"g102.7be4c21e.bin","g103":"g103.21e4409c.bin","g104":"g104.d3d20be4.bin","g105":"g105.5b37782e.bin","g106":"g106.3ae8d357.bin","g107":"g107.dff49920.bin","g108":"g108.e4465e2f.bin","g109":"g109.c546e067.bin","g110":"g110.aba361ac.bin","g111":"g111.041f6867.bin","g112":"g112.c4e8ff36.bin","g113":"g113.9dca6433.bin","g114":"g114.03e6d14c.bin"};
+function ld(id){if(cache.has(id))return Promise.resolve(cache.get(id));if(pending.has(id))return pending.get(id);if(!DMAP[id])return Promise.reject(Error('Missing data: '+id));
+var promise=(async function(){var r=await fetch('d/'+DMAP[id]);if(!r.ok)throw Error('ডাটা আনা যায়নি: '+id);var txt=await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).text();var o=JSON.parse(txt);cache.set(id,o);if(cache.size>12)cache.delete(cache.keys().next().value);return o})().finally(function(){pending.delete(id)});pending.set(id,promise);return promise}
+function plain(t){return String(t||'').replace(/<[^>]*>/g,'')}
+function attr(t){return esc(t).replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+function fmt(t){return esc(t||'').replace(/&lt;(\/?)b&gt;/g,'<$1b>').split(/\r?\n/).filter(function(x){return x.trim()}).map(function(p){return '<p>'+p+'</p>'}).join('')}
+function norm(t){return plain(t).normalize('NFD').replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u08D3-\u08FF\u0640]/g,'').replace(/[ٱأإآ]/g,'ا').replace(/[ىی]/g,'ي').replace(/ک/g,'ك').replace(/ہ/g,'ه').replace(/ۃ/g,'ة').toLowerCase().trim()}
+function num(t){return Number(String(t).replace(/[০-৯]/g,function(c){return BD.indexOf(c)}))}
+function valid(s,a){return Number.isInteger(s)&&Number.isInteger(a)&&s>=1&&s<=114&&a>=1&&a<=M[s-1][2]}
+function gidx(s,a){var n=0;for(var i=0;i<s-1;i++)n+=M[i][2];return n+a}
+function fromIndex(n){for(var i=0;i<114;i++){if(n<=M[i][2])return [i+1,n];n-=M[i][2]}return [114,6]}
+function juz(s,a){var j=1;for(var i=0;i<30;i++)if(gidx(s,a)>=gidx(JZ[i][0],JZ[i][1]))j=i+1;return j}
+function today(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function streak(){var n=0,d=new Date();if((S.st[today()]||0)<60)d.setDate(d.getDate()-1);for(;;){var k=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();if((S.st[k]||0)<60)break;n++;d.setDate(d.getDate()-1)}return n}
+var L={dl:0,sd:0,sh:0,rl:0},W=null,lastFocus=null;
+function scr(){$('#sc').classList.toggle('on',!!(L.dl||L.sd||L.sh))}
+function dr(w,o){L[w]=o;$('#'+w).classList.toggle('on',!!o);scr()}
+function closeAll(){dr('dl',0);dr('sd',0);L.sh=0;W=null;$('#sh').classList.remove('on');$('#sh').onclick=null;scr();if(lastFocus&&lastFocus.isConnected)lastFocus.focus({preventScroll:true})}
+function sheet(t,h,handler){lastFocus=document.activeElement;W=null;var el=$('#sh');el.classList.remove('ws');el.innerHTML='<div class="sheethead"><h3>'+t+'</h3><button class="ib" data-cl aria-label="বন্ধ করুন">'+I(P.x)+'</button></div>'+h;el.onclick=function(e){if(e.target.closest('[data-cl]'))closeAll();else if(handler)handler(e)};el.scrollTop=0;L.sh=1;el.classList.add('on');scr();el.querySelector('button').focus({preventScroll:true})}
+$('#sh').setAttribute('role','dialog');$('#sh').setAttribute('aria-modal','true');$('#tt').setAttribute('role','status');$('#tt').setAttribute('aria-live','polite');
+$('#sc').onclick=closeAll;
+function pick(t,opts,sel,multi,cb){sheet(t,opts.map(function(o){return '<button class="op" data-v="'+attr(o[0])+'"><input type="'+(multi?'checkbox':'radio')+'"'+(sel.indexOf(o[0])>=0?' checked':'')+' tabindex="-1" style="pointer-events:none"><span>'+esc(o[1])+'</span></button>'}).join(''),function(e){var b=e.target.closest('.op');if(!b)return;var v=b.dataset.v;if(multi){var i=sel.indexOf(v);if(i>=0){if(sel.length<2)return toast('কমপক্ষে একটি নির্বাচন করুন');sel.splice(i,1)}else sel.push(v);b.querySelector('input').checked=sel.indexOf(v)>=0;cb(sel.slice())}else{closeAll();cb([v])}})}
+var tab='home',ht='sura',lt='pin',lq='',folderFilter='';
+var SW=[['home','হোম',P.home],['plan','প্ল্যানার',P.cal],['topic','বিষয়ভিত্তিক',P.grid],['lib','লাইব্রেরি',P.lib],['stat','পরিসংখ্যান',P.stat]];
+var LABEL={sura:'সূরা',page:'পৃষ্ঠা',juz:'পারা',hizb:'হিজব',quarter:'হিজবের ¼',ruku:'রুকু'};
+function nav(){$('#bn').innerHTML=SW.map(function(t){return '<button data-t="'+t[0]+'" class="'+(t[0]===tab?'on':'')+'">'+I(t[2])+'<span>'+t[1]+'</span></button>'}).join('')}
+function hdr(t){$('#hd').innerHTML='<button class="ib" data-a="menu" aria-label="মেনু">'+I(P.menu)+'</button><h1>'+t+'</h1><button class="ib" data-a="search" aria-label="খুঁজুন">'+I(P.search)+'</button>'}
+function srow(m){return '<button class="row" data-s="'+m[0]+'"><span class="n">'+bn(m[0])+'</span><span class="m"><b>'+esc(m[1])+'</b><small>'+esc(m[4])+' · '+bn(m[2])+' আয়াত</small></span><span class="a" lang="ar">'+m[3]+'</span></button>'}
+function chipS(x){return '<button class="chip" data-s="'+x[0]+'" data-ay="'+(x[1]||1)+'">'+esc(M[x[0]-1][1])+(x[1]?' '+bn(x[0])+':'+bn(x[1]):'')+'</button>'}
+function homeH(){var h='';if(S.last.length)h+='<div class="sec">সর্বশেষ পড়েছিলেন</div><div class="chips">'+S.last.map(chipS).join('')+'</div>';h+='<div class="sec">কুইক লিংক</div><div class="chips">'+[67,32,18,36,55,56].map(function(x){return chipS([x])}).join('')+'</div><div class="tabs">'+Object.keys(LABEL).map(function(k){return '<button data-h="'+k+'" class="'+(ht===k?'on':'')+'">'+LABEL[k]+'</button>'}).join('')+'</div>';
+if(ht==='sura')return h+'<div class="surah-grid">'+M.map(srow).join('')+'</div>';var arr=X.nav[ht];h+='<div class="indexfind"><input id="indexq" inputmode="numeric" placeholder="'+LABEL[ht]+' নম্বর দিয়ে খুঁজুন"><small>পৃষ্ঠা সূচি: মাদানী ৬০৪ · '+bn(arr.length)+' '+LABEL[ht]+'</small></div>';return h+arr.map(function(p,i){return '<button class="row sectionrow" data-vw="'+ht+'" data-idx="'+i+'"><span class="n">'+bn(i+1)+'</span><span class="m"><b>'+LABEL[ht]+' '+bn(i+1)+'</b><small>'+esc(M[p[0]-1][1])+' '+bn(p[0])+':'+bn(p[1])+' থেকে</small></span></button>'}).join('')}
+function show(t){tab=t;nav();hdr({home:'আল কুরআন',plan:'প্ল্যানার',topic:'বিষয়ভিত্তিক আয়াত',lib:'লাইব্রেরি',stat:'পরিসংখ্যান'}[t]);$('#mn').innerHTML=t==='home'?'<div class="home-layout">'+homeH()+'</div>':t==='plan'?planH():t==='topic'?topicH():t==='lib'?libH():statH()}
+function topicH(){return '<input id="topicq" class="inp" placeholder="বিষয় খুঁজুন (English)">'+X.topics.filter(function(t){return !t[5]}).map(topicRow).join('')}
+function topicRow(t){return '<button class="lr topicrow" data-topic="'+t[0]+'"><span class="ic">'+I(P.grid)+'</span><span>'+esc(t[1])+'<small style="display:block;color:var(--mu)">'+(t[6]?bn(t[6].split(',').length)+' আয়াত':'উপবিষয় দেখুন')+'</small></span></button>'}
+function openTopic(id){var t=X.topics.find(function(t){return t[0]===+id}),children=X.topics.filter(function(t){return t[5]===String(id)});if(!t)return;var refs=(t[6]||'').split(',').map(Number).filter(function(n){return n>=1&&n<=6236});sheet(esc(t[1]),children.map(topicRow).join('')+refs.map(function(n){var p=fromIndex(n);return '<button class="sr" data-ref="'+p.join(':')+'">'+esc(M[p[0]-1][1])+' '+bn(p[0])+':'+bn(p[1])+'</button>'}).join(''),function(e){var b=e.target.closest('[data-topic],[data-ref]');if(!b)return;if(b.dataset.topic)openTopic(+b.dataset.topic);else{var p=b.dataset.ref.split(':').map(Number);closeAll();openR(p[0],p[1])}})}
+function libH(){var it=lt==='pin'?S.pins.map(function(p){return [p[0],p[1],'']}):Object.keys(S.notes).map(function(k){var p=k.split(':');return [+p[0],+p[1],S.notes[k]]});it=it.filter(function(x){return valid(x[0],x[1])&&(!lq||norm(M[x[0]-1][1]+x[2]).includes(norm(lq)))&&(!folderFilter||lt!=='pin'||(S.pinFolders[x[0]+':'+x[1]]||'সাধারণ')===folderFilter)});
+return '<div class="libtabs"><button data-l="pin" class="'+(lt==='pin'?'on':'')+'">পিনসমূহ</button><button data-l="note" class="'+(lt==='note'?'on':'')+'">নোট</button></div><input class="inp" id="lq" placeholder="খুঁজুন" value="'+attr(lq)+'">'+(lt==='pin'?'<div class="chips"><button class="chip" data-folder="">সব</button>'+S.folders.map(function(f){return '<button class="chip" data-folder="'+attr(f)+'">'+esc(f)+'</button>'}).join('')+'<button class="chip" data-newfolder>+ ফোল্ডার</button></div>':'')+(it.length?it.map(function(x){return '<div class="libitem"><button class="lr" data-s="'+x[0]+'" data-ay="'+x[1]+'"><span class="ic">'+I(lt==='pin'?P.bm:P.note)+'</span><span>'+esc(M[x[0]-1][1])+' '+bn(x[0])+':'+bn(x[1])+'<small style="display:block">'+esc(x[2]||S.pinFolders[x[0]+':'+x[1]]||'সাধারণ')+'</small></span></button><button class="ib" data-libedit="'+x[0]+':'+x[1]+'" aria-label="সম্পাদনা">'+I(P.tune)+'</button></div>'}).join(''):'<div class="note">এখনও কিছু নেই। আয়াতের পিন বা নোট আইকন ব্যবহার করুন।</div>')+'<div class="cl"><button class="btn" data-backup>ব্যাকআপ এক্সপোর্ট</button><button class="btn" data-restore>ব্যাকআপ ইমপোর্ট</button></div>'}
+function newFolder(cb){sheet('নতুন ফোল্ডার','<div class="cl"><input id="foldername" maxlength="80" placeholder="ফোল্ডারের নাম"><button class="btn" id="makefolder">তৈরি করুন</button></div>',function(e){if(!e.target.closest('#makefolder'))return;var n=$('#foldername').value.trim();if(!n)return;if(S.folders.includes(n))return toast('এই নামে ফোল্ডার আছে');S.folders.push(n);save();closeAll();if(cb)cb(n);else show('lib')})}
+function planH(){if(!S.plan||typeof S.plan!=='object')return '<div class="card"><h2>নিজের পড়ার পরিকল্পনা</h2><p>আয়াতের সীমা এবং দিন ঠিক করুন। পড়া শেষ হলে প্রতিদিনের সেশন সম্পন্ন চিহ্নিত করুন।</p><button class="btn" data-plannew>প্ল্যান তৈরি করুন</button></div>';var p=S.plan,total=p.end-p.start+1,n=p.done.length;return '<div class="card"><h2>'+esc(p.name)+'</h2><p>'+bn(n)+' / '+bn(p.days)+' সেশন সম্পন্ন</p><div class="bar"><i style="width:'+n/p.days*100+'%"></i></div><button class="btn" data-plandelete style="margin-top:16px">প্ল্যান মুছুন</button></div>'+Array.from({length:p.days},function(_,i){var lo=p.start+Math.floor(total*i/p.days),hi=p.start+Math.floor(total*(i+1)/p.days)-1,a=fromIndex(lo),b=fromIndex(hi),done=p.done.includes(i);return '<div class="card session"><button data-session="'+i+'"><b>দিন '+bn(i+1)+'</b><br>'+bn(a.join(':'))+' — '+bn(b.join(':'))+'</button><label><input type="checkbox" data-sessiondone="'+i+'"'+(done?' checked':'')+'>সম্পন্ন</label></div>'}).join('')}
+function createPlan(){sheet('প্ল্যান তৈরি করুন','<div class="formgrid"><label>নাম<input id="planname" value="কুরআন পাঠ"></label><label>দিন<input id="plandays" type="number" value="30" min="1" max="365"></label><label>শুরু (সূরা:আয়াত)<input id="planfrom" value="1:1"></label><label>শেষ (সূরা:আয়াত)<input id="planto" value="114:6"></label><button class="btn" id="plansave">প্ল্যান তৈরি করুন</button></div>',function(e){if(!e.target.closest('#plansave'))return;var a=parseRef($('#planfrom').value),b=parseRef($('#planto').value),days=num($('#plandays').value);if(!a||!b||gidx.apply(null,a)>gidx.apply(null,b)||!Number.isInteger(days)||days<1||days>365)return toast('সঠিক আয়াত ও ১–৩৬৫ দিন দিন');var n=gidx.apply(null,b)-gidx.apply(null,a)+1;days=Math.min(days,n);S.plan={name:$('#planname').value.trim()||'কুরআন পাঠ',start:gidx.apply(null,a),end:gidx.apply(null,b),days:days,done:[]};save();closeAll();show('plan')})}
+function statH(){var mins=Math.floor((S.st[today()]||0)/60),d=new Date(),wk='';for(var i=0;i<7;i++){var x=new Date();x.setDate(d.getDate()-d.getDay()+i);var k=x.getFullYear()+'-'+(x.getMonth()+1)+'-'+x.getDate(),m=Math.floor((S.st[k]||0)/60);wk+='<div><i class="'+(m?'f':'')+'" style="height:'+Math.max(34,Math.min(150,34+m*5))+'px"></i><span>'+'SMTWTFS'[i]+'</span>'+bn(m)+'m</div>'}return '<div class="card"><h2>আজ '+bn(mins)+' মিনিট</h2><p>বর্তমান স্ট্রিক: '+bn(streak())+' দিন · দৈনিক লক্ষ্য ১ মিনিট</p></div><div class="card"><div>এই সপ্তাহ</div><div class="wk">'+wk+'</div></div><div class="note">রিডারে সক্রিয় থাকা সময় গণনা হয়। ৫ মিনিট নিষ্ক্রিয় থাকলে গণনা থামে।</div>'}
+/* Reader: every visible verse keeps its own surah context. */
+var R={s:1,a:1,d:null,rows:[],view:'sura',idx:0,token:0},scrollTimer,readingSince=Date.now();
+function secIndex(view,s,a){var n=gidx(s,a),ix=0;X.nav[view].forEach(function(p,i){if(gidx(p[0],p[1])<=n)ix=i});return ix}
+function remember(s,a){if(!valid(s,a))return;S.last=S.last.filter(function(p){return p[0]!==s});S.last.unshift([s,a]);S.last=S.last.slice(0,8);save()}
+function reference(){var rb=$('#rb');if(R.anchor&&Math.abs(rb.scrollTop-R.anchorPos)<2)return R.anchor.slice();var top=rb.getBoundingClientRect().top+70,els=rb.querySelectorAll('.ay,.rd>[data-a]');for(var i=0;i<els.length;i++)if(els[i].getBoundingClientRect().bottom>top)return [+els[i].dataset.s,+els[i].dataset.a];return [R.s,R.a]}
+async function openR(s,a,view,idx){a=a||1;if(!valid(+s,+a))return toast('এই আয়াত নেই');stopAs();var token=++R.token;R.s=+s;R.a=+a;R.view=view||'sura';R.idx=R.view==='sura'?s-1:(Number.isInteger(idx)?idx:secIndex(R.view,s,a));S.view=R.view;R.d=null;R.rows=[];R.anchor=null;L.rl=1;wakeScreen();$('#rl').classList.add('on');$('#rb').innerHTML='<div class="ld">লোড হচ্ছে…</div>';rh();
+try{var start,end;if(R.view==='sura'){start=gidx(s,1);end=gidx(s,M[s-1][2])}else{var list=X.nav[R.view],p=list[R.idx],next=list[R.idx+1];start=gidx(p[0],p[1]);end=next?gidx(next[0],next[1])-1:6236}var first=fromIndex(start),last=fromIndex(end),loaded=await Promise.all(Array.from({length:last[0]-first[0]+1},function(_,i){return ld('c'+(first[0]+i))}));if(token!==R.token)return;
+loaded.forEach(function(d,i){var sn=first[0]+i;d.ay.forEach(function(y){var n=gidx(sn,y.a);if(n>=start&&n<=end)R.rows.push({s:sn,y:y})})});R.data={};loaded.forEach(function(d,i){R.data[first[0]+i]=d});R.d=loaded[s-first[0]]||loaded[0];rr(a,s);remember(s,a)
+}catch(e){if(token===R.token)$('#rb').innerHTML='<div class="note">ডেটা লোড করা যায়নি। ফাইলটি নতুন ব্রাউজারে আবার খুলুন।</div>';console.error(e)}}
+function titleR(){return R.view==='sura'?bn(R.s)+'. '+esc(M[R.s-1][1]):LABEL[R.view]+' '+bn(R.idx+1)}
+function rh(){var max=R.view==='sura'?114:X.nav[R.view].length;$('#rh').innerHTML='<button class="ib" data-r="back" aria-label="ফিরে যান">'+I(P.back)+'</button><h1><button data-r="pick">'+titleR()+' ▾</button></h1><button class="ib" data-r="jump" aria-label="আয়াতে যান">'+I(P.jump)+'</button><button class="ib" data-r="set" aria-label="সেটিংস">'+I(P.tune)+'</button>';
+$('#rf').innerHTML='<button data-r="mode" class="'+(S.mode==='trans'?'on':'')+'">'+I(S.mode==='trans'?P.book:P.tr)+'<span>'+(S.mode==='trans'?'তিলাওয়াত':'অনুবাদ')+'</span></button><button data-r="as" class="'+(asv?'on':'')+'">'+I(P.as)+'<span>অটোস্ক্রল</span></button><button data-r="au">'+I(P.play)+'<span>অডিও</span></button><button data-r="single">'+I(P.lines)+'<span>একক আয়াত</span></button>';}
+function verseHTML(y){if(S.script==='indo')return esc(y.ip);if(!S.c.tj||!y.taj)return esc(y.ar);var raw=plain(y.taj),ix=y.ar.indexOf(raw);return ix<0?esc(y.ar):esc(y.ar.slice(0,ix))+y.taj+esc(y.ar.slice(ix+raw.length))}
+function words(y){return S.script==='indo'?y.iw:y.aw}
+function wordHTML(y,i){return S.script==='uthmani'&&S.c.tj&&y.taw?y.taw[i]:esc(words(y)[i])}
+function wbw(y){if(!S.c.wbw)return '<div class="ar" lang="ar" dir="rtl">'+words(y).map(function(w,i){return '<span class="tw" data-i="'+i+'" tabindex="0" role="button">'+wordHTML(y,i)+'</span>'}).join(' ')+'</div>';return '<div class="wb">'+words(y).map(function(w,i){var m=y.w[i]||['',''];return '<button class="w" data-i="'+i+'" aria-label="শব্দ '+bn(i+1)+'"><span class="wa" lang="ar" dir="rtl">'+wordHTML(y,i)+'</span><span class="wg">'+(S.wl==='bn'?esc(m[0]):S.wl==='en'?esc(m[1]):'<i>'+esc(m[0])+'</i><i>'+esc(m[1])+'</i>')+'</span></button>'}).join('')+'</div>'}
+function trH(y){if(!S.c.tr)return '';return S.trs.map(function(k){var t=k==='en'?y.en:y[k];return t?'<div class="tl">'+TR[k]+'</div><p class="tx"'+(k==='en'?' lang="en"':'')+'>'+(k==='t'?t:esc(t))+'</p>'+(k==='en'&&y.ef?'<details class="enfootnotes"><summary>অনুবাদের টীকা (English)</summary>'+fmt(y.ef)+'</details>':''):''}).join('')}
+function article(s,y,single){var key=s+':'+y.a,pn=S.pins.some(function(p){return p[0]===s&&p[1]===y.a});return '<article class="ay" id="a'+s+'_'+y.a+'" data-s="'+s+'" data-a="'+y.a+'"><div class="ah"><span class="an">'+(single?esc(M[s-1][1])+' · ':'')+bn(key)+'</span><button data-x="more" class="ib" aria-label="আরও অপশন">⋯</button></div>'+(S.c.ar?wbw(y):'')+trH(y)+'<div class="ac"><button data-x="play" aria-label="অডিও" title="অডিও">'+I(P.play)+'</button><button data-x="tf" aria-label="তাফসির" title="তাফসির">'+I(P.cap)+'</button><button data-x="bm" class="'+(pn?'on':'')+'" aria-label="বুকমার্ক" title="বুকমার্ক">'+I(P.bm)+'</button><button data-x="note" class="'+(S.notes[key]?'on':'')+'" aria-label="নোট" title="নোট">'+I(P.note)+'</button><button data-x="single" aria-label="একক আয়াত" title="একক আয়াত">'+I(P.lines)+'</button></div><details class="tf'+(S.c.tf?' show':'')+'" data-s="'+s+'" data-a="'+y.a+'"><summary>তাফসির</summary><div class="tfb"></div></details></article>'}
+function rr(a,s){if(!L.rl||!R.rows.length)return;var ref=a?[s||R.s,a]:reference(),h='',prev=0,max=R.view==='sura'?114:X.nav[R.view].length;
+rh();h+='<div class="pstrip"><button class="ib" data-r="prev" aria-label="আগের '+LABEL[R.view]+'"'+(R.idx===0?' disabled':'')+'>‹</button><button data-r="contents">'+LABEL[R.view]+' '+bn(R.idx+1)+' / '+bn(max)+'</button><button data-r="intro">সূরা পরিচিতি</button><button class="ib" data-r="next" aria-label="পরের '+LABEL[R.view]+'"'+(R.idx===max-1?' disabled':'')+'>›</button></div>';
+R.rows.forEach(function(row){var sn=row.s,y=row.y;if(sn!==prev){if(prev&&S.mode==='read')h+='</div>';h+='<div class="nm"><h1>'+esc(M[sn-1][1])+'</h1><p lang="ar">'+M[sn-1][3]+'</p><small>'+esc(M[sn-1][4])+' · '+bn(M[sn-1][2])+' আয়াত · পারা '+bn(juz(sn,y.a))+'</small></div>';if(y.a===1&&sn!==1&&sn!==9&&S.c.ar){var bis=R.data[sn];h+='<div class="bis" lang="ar">'+esc(S.script==='indo'?bis.bisi:bis.bisu)+'</div>'}if(S.mode==='read')h+='<div class="rd" lang="ar">';prev=sn}
+if(S.mode==='read')h+='<span class="readverse" id="a'+sn+'_'+y.a+'" data-s="'+sn+'" data-a="'+y.a+'" tabindex="0" role="button" aria-label="আয়াত '+bn(sn+':'+y.a)+'">'+verseHTML(y)+'</span><span class="cn">'+bn(y.a)+'</span> ';else h+=article(sn,y,false)});if(S.mode==='read')h+='</div>';
+h+='<div class="endnav"><button class="btn" data-r="prev"'+(R.idx===0?' disabled':'')+'>‹ আগের '+LABEL[R.view]+'</button><button class="btn" data-r="next"'+(R.idx===max-1?' disabled':'')+'>পরের '+LABEL[R.view]+' ›</button></div>';$('#rb').innerHTML=h;jump(ref[0],ref[1],false);highlight(false)}
+function jump(s,a,flash){var e=document.getElementById('a'+s+'_'+a);if(!e)return;e.scrollIntoView({block:'start'});R.anchor=[s,a];R.anchorPos=$('#rb').scrollTop;if(flash!==false){e.classList.add('flash');setTimeout(function(){e.classList.remove('flash')},1600)}}
+function moveSection(d){if(!L.rl)return;var ix=R.idx+d,arr=R.view==='sura'?M.map(function(m){return [m[0],1]}):X.nav[R.view];if(ix<0||ix>=arr.length)return;openR(arr[ix][0],arr[ix][1],R.view,ix)}
+function closeR(){var p=reference();remember(p[0],p[1]);R.token++;L.rl=0;$('#rl').classList.remove('on');stopAs();wakeScreen();show(tab)}
+function modeToggle(){var p=reference();S.mode=S.mode==='trans'?'read':'trans';save();rr(p[1],p[0])}
+async function tfFill(det,force){var s=+det.dataset.s,a=+det.dataset.a,b=det.querySelector('.tfb');if(b.dataset.f&&!force)return;b.innerHTML='<div class="ld">লোড হচ্ছে…</div>';try{var t=await ld('t'+s);if(!b.isConnected)return;var ids=S.tfs.slice();if(force&&!ids.includes(force))ids.push(force);b.innerHTML=ids.map(function(k){var body;if(k==='t'){body=(t.th[a]||[]).map(function(n){return '<p><b>টীকা '+bn(n[0])+':</b> '+esc(n[1]).replace(/\n/g,'</p><p>')+'</p>'}).join('')||'<p>এই আয়াতে আলাদা টীকা নেই।</p>'}else body=fmt((t[k]||{})[a])||'<p>এই আয়াতে আলাদা তাফসির নেই। আগের/পরের আয়াত দেখুন।</p>';return '<h4>'+TF[k]+'</h4>'+body}).join('');b.dataset.f='1'}catch(e){b.textContent='তাফসির লোড করা যায়নি।'}}
+async function intro(s){s=s||reference()[0];var t=await ld('t'+s);sheet('সূরা '+esc(M[s-1][1])+' — পরিচিতি','<div class="prose">'+(t.intro.map(function(x){return (x.t?'<h4>'+esc(x.t)+'</h4>':'')+fmt(x.x)}).join('')||'<p>এই সূরার ভূমিকা নেই।</p>')+(X.chapters[s]?'<details><summary>মূল অ্যাপের অধ্যায় পরিচিতি (English)</summary>'+fmt(X.chapters[s][0])+fmt(X.chapters[s][1])+'</details>':'')+'</div>')}
+function contents(){pick('পড়ার বিভাগ',Object.keys(LABEL).map(function(k){return [k,LABEL[k]]}),[R.view],0,function(v){var p=reference();openR(p[0],p[1],v[0])})}
+function readerPick(){var surahMode=R.view==='sura',arr=surahMode?M.map(function(m){return [m[0],m[1]]}):X.nav[R.view].map(function(p,i){return [i,LABEL[R.view]+' '+bn(i+1)+' · '+M[p[0]-1][1]+' '+bn(p.join(':'))]});sheet(LABEL[R.view]+' নির্বাচন','<input class="inp" id="pickq" placeholder="নাম বা নম্বর খুঁজুন">'+arr.map(function(p){return '<button class="op pickrow" data-pick="'+p[0]+'">'+(surahMode?'<span class="picknumber">'+bn(p[0])+'</span><span class="pickname">'+esc(String(p[1]))+'</span>':esc(String(p[1])))+'</button>'}).join(''),function(e){var b=e.target.closest('[data-pick]');if(!b)return;var n=+b.dataset.pick;closeAll();if(R.view==='sura')openR(n,1);else{var p=X.nav[R.view][n];openR(p[0],p[1],R.view,n)}});$('#pickq').oninput=function(){var raw=this.value.trim(),q=norm(raw),numeric=/^[0-9০-৯]+$/.test(raw),n=numeric?num(raw):null;$('#sh').querySelectorAll('.pickrow').forEach(function(el){var index=+el.dataset.pick+(surahMode?0:1);el.hidden=numeric?index!==n:!norm(el.textContent+' '+index+' '+bn(index)).includes(q)})}}
+
+function rAct(w){if(w==='back')closeR();else if(w==='set')openSet();else if(w==='mode')modeToggle();else if(w==='prev')moveSection(-1);else if(w==='next')moveSection(1);else if(w==='pick')readerPick();else if(w==='contents')contents();else if(w==='intro')intro();else if(w==='jump')gotoAy();else if(w==='as')cycAs();else if(w==='au')audioSettings();else if(w==='single'){var p=reference();singleSheet(p[0],p[1])}}
+async function getVerse(s,a){var d=await ld('c'+s);return d.ay[a-1]}
+async function singleSheet(s,a){if(!valid(s,a))return;var y=await getVerse(s,a);sheet('একক আয়াত · '+bn(s+':'+a),'<div class="singlebody">'+article(s,y,true)+'</div><div class="wordnav"><button class="btn" data-singlemove="-1"'+(s===1&&a===1?' disabled':'')+'>‹ আগের আয়াত</button><button class="btn" data-singlemove="1"'+(s===114&&a===6?' disabled':'')+'>পরের আয়াত ›</button></div><button class="wcx" data-openverse="'+s+':'+a+'">সূরায় এই আয়াত দেখুন</button>',function(e){var b=e.target.closest('[data-singlemove],[data-openverse]');if(b){if(b.dataset.singlemove){var n=gidx(s,a)+(+b.dataset.singlemove);if(n>=1&&n<=6236){var p=fromIndex(n);singleSheet(p[0],p[1])}}else{closeAll();openR(s,a)}return}verseClick(e)});W={type:'single',s:s,a:a};}
+var wordToken=0;
+async function wordSheet(s,a,i){var token=++wordToken,y=await getVerse(s,a);if(token!==wordToken||!words(y)[i])return;var w=y.w[i]||['',''],lr=y.lr[i]||['',''],first=s===1&&a===1&&i===0,last=s===114&&a===6&&i===words(y).length-1;
+sheet(esc(M[s-1][1])+' · '+bn(s+':'+a+':'+(i+1)), '<div class="wc"><div class="wca" lang="ar" dir="rtl">'+wordHTML(y,i)+'</div><div class="wcm">'+esc(S.wl==='bn'?w[0]:w[1])+'</div><div class="wcm2">'+esc(S.wl==='bn'?w[1]:w[0])+'</div><div class="wlr">'+[['লেমা',lr[0],'lemma'],['রুট',lr[1],'root']].map(function(p){return '<div><small>'+p[0]+'</small><button class="pill" lang="ar" dir="rtl" data-corpus="'+p[2]+'" data-val="'+attr(p[1])+'"'+(!p[1]?' disabled':'')+'>'+esc(p[1]||'—')+'</button></div>'}).join('')+'</div><details class="corpusdetail" data-grammar="'+s+':'+a+':'+i+'"><summary>শব্দ বিশ্লেষণ (মূল অ্যাপ)</summary><div lang="ar" dir="rtl" class="ar">'+esc(y.cw[i])+'</div><small>'+esc((y.pos[i]||[]).filter(Boolean).join(' + '))+'</small><div class="grammarbody"></div></details></div><div class="wordnav"><button class="btn" data-wordmove="-1"'+(first?' disabled':'')+'>‹ আগের শব্দ</button><small>'+bn(i+1)+' / '+bn(words(y).length)+'</small><button class="btn" data-wordmove="1"'+(last?' disabled':'')+'>পরের শব্দ ›</button></div><div class="cl wordactions"><button class="btn" data-wordplay>আয়াত শুনুন</button><button class="btn" data-wordverse>পুরো আয়াত</button></div>',function(e){var b=e.target.closest('[data-wordmove],[data-corpus],[data-wordplay],[data-wordverse]');if(!b)return;if(b.dataset.wordmove)moveWord(+b.dataset.wordmove);else if(b.dataset.corpus)corpusSearch(b.dataset.corpus,b.dataset.val);else if(b.hasAttribute('data-wordplay'))pl(s,a);else singleSheet(s,a)});$('#sh').classList.add('ws');W={type:'word',s:s,a:a,i:i};}
+async function moveWord(d){if(!W)return;if(W.type==='single'){var n=gidx(W.s,W.a)+d;if(n>=1&&n<=6236){var p=fromIndex(n);singleSheet(p[0],p[1])}return}var w=Object.assign({},W),y=await getVerse(w.s,w.a);w.i+=d;if(w.i<0){var n=gidx(w.s,w.a)-1;if(n<1)return;var p=fromIndex(n);w.s=p[0];w.a=p[1];w.i=(await getVerse(w.s,w.a)).aw.length-1}else if(w.i>=y.aw.length){var n=gidx(w.s,w.a)+1;if(n>6236)return;var p=fromIndex(n);w.s=p[0];w.a=p[1];w.i=0}wordSheet(w.s,w.a,w.i)}
+function togglePin(s,a){var ix=S.pins.findIndex(function(p){return p[0]===s&&p[1]===a});if(ix>=0){S.pins.splice(ix,1);delete S.pinFolders[s+':'+a]}else S.pins.unshift([s,a]);save();toast(ix>=0?'পিন সরানো হয়েছে':'পিন করা হয়েছে');document.querySelectorAll('.ay[data-s="'+s+'"][data-a="'+a+'"] [data-x="bm"]').forEach(function(b){b.classList.toggle('on',ix<0)})}
+function editNote(s,a){var k=s+':'+a;sheet('নোট — '+bn(k),'<div class="formgrid"><textarea id="ni" rows="6" placeholder="আপনার নোট লিখুন">'+esc(S.notes[k]||'')+'</textarea><button class="btn" id="notesave">সংরক্ষণ</button></div>',function(e){if(!e.target.closest('#notesave'))return;var v=$('#ni').value.trim();if(v)S.notes[k]=v;else delete S.notes[k];save();closeAll();if(L.rl)rr();else show('lib');toast('নোট সংরক্ষিত হয়েছে')})}
+async function verseText(s,a){var y=await getVerse(s,a);return plain(S.script==='indo'?y.ip:y.ar).trim()+'\n\n'+S.trs.map(function(k){return plain(k==='en'?y.en:y[k]||'')}).join('\n\n')+'\n\n'+M[s-1][1]+' '+s+':'+a}
+async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();if(!document.execCommand('copy'))throw Error('copy');t.remove()}toast('কপি হয়েছে')}catch(e){sheet('কপি করুন','<textarea class="copybox" readonly>'+esc(text)+'</textarea>');$('#sh textarea').select()}}
+function verseMenu(s,a){sheet(esc(M[s-1][1])+' '+bn(s+':'+a),[['copy','আয়াত কপি করুন'],['share','আয়াত শেয়ার করুন'],['single','একক আয়াত'],['folder','ফোল্ডারে পিন করুন'],['note','নোট লিখুন']].map(function(p){return '<button class="op" data-vmenu="'+p[0]+'">'+p[1]+'</button>'}).join(''),async function(e){var b=e.target.closest('[data-vmenu]');if(!b)return;var k=b.dataset.vmenu;if(k==='single')singleSheet(s,a);else if(k==='note')editNote(s,a);else if(k==='folder')chooseFolder(s,a);else{var txt=await verseText(s,a);if(k==='share'&&navigator.share){try{await navigator.share({text:txt})}catch(e){if(e.name!=='AbortError')copyText(txt)}}else copyText(txt)}})}
+function chooseFolder(s,a){pick('পিনের ফোল্ডার',S.folders.map(function(f){return [f,f]}).concat([['+','+ নতুন ফোল্ডার']]),[S.pinFolders[s+':'+a]||'সাধারণ'],0,function(v){function assign(f){if(!S.pins.some(function(p){return p[0]===s&&p[1]===a}))S.pins.unshift([s,a]);S.pinFolders[s+':'+a]=f;save();toast('পিন সংরক্ষিত হয়েছে');if(L.rl)rr();else show('lib')}if(v[0]==='+')newFolder(assign);else assign(v[0])})}
+function verseClick(e){var articleEl=e.target.closest('.ay'),read=e.target.closest('.readverse');if(read)return singleSheet(+read.dataset.s,+read.dataset.a);if(!articleEl)return;var s=+articleEl.dataset.s,a=+articleEl.dataset.a,w=e.target.closest('[data-i]'),b=e.target.closest('[data-x]');if(w){wordSheet(s,a,+w.dataset.i);return}if(e.target.closest('sup.fn')){var d=articleEl.querySelector('details');d.classList.add('show');d.open=true;tfFill(d,'t');return}if(!b)return;var k=b.dataset.x;if(k==='play')pl(s,a);else if(k==='bm')togglePin(s,a);else if(k==='note')editNote(s,a);else if(k==='single')singleSheet(s,a);else if(k==='more')verseMenu(s,a);else if(k==='tf'){var d=articleEl.querySelector('details');d.classList.add('show');d.open=!d.open}}
+$('#rb').addEventListener('click',function(e){var b=e.target.closest('[data-r]');if(b)rAct(b.dataset.r);else verseClick(e)});
+['#rb','#sh'].forEach(function(id){$(id).addEventListener('toggle',function(e){if(e.target.matches('details.tf')&&e.target.open)tfFill(e.target)},true)});
+$('#rh').onclick=$('#rf').onclick=function(e){var b=e.target.closest('[data-r]');if(b)rAct(b.dataset.r)};
+$('#rb').addEventListener('scroll',function(){clearTimeout(scrollTimer);scrollTimer=setTimeout(function(){if(L.rl&&R.rows.length){var p=reference();remember(p[0],p[1]);R.a=p[1]}},600)},{passive:true});
+/* Pointer gestures work for touch and mouse; vertical scroll and text selection are respected. */
+function gesture(el,action){var start=null;el.addEventListener('pointerdown',function(e){if(!e.isPrimary||e.button!==0||e.target.closest('input,textarea,select,button:not(.w),.chips,.tabs,summary'))return;start={x:e.clientX,y:e.clientY,t:Date.now(),id:e.pointerId};});el.addEventListener('pointercancel',function(){start=null});el.addEventListener('pointerup',function(e){if(!start||e.pointerId!==start.id)return;var p=start;start=null;var dx=e.clientX-p.x,dy=e.clientY-p.y;if(Date.now()-p.t>900||Math.abs(dx)<65||Math.abs(dx)<Math.abs(dy)*1.6||String(window.getSelection()).length)return;action((dx>0?1:-1)*(S.rtl?1:-1));el.dataset.swiped=String(Date.now())});el.addEventListener('click',function(e){if(Date.now()-Number(el.dataset.swiped||0)<250){e.preventDefault();e.stopImmediatePropagation()}},true)}
+function wheelGesture(el,action){var sum=0,last=0,cooldown=0;el.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)<Math.abs(e.deltaY)*1.5||Math.abs(e.deltaX)<2||e.ctrlKey)return;if(e.target.closest('input,textarea,select,.chips,.tabs'))return;e.preventDefault();var now=Date.now();if(now<cooldown)return;if(now-last>180)sum=0;last=now;sum+=e.deltaX;if(Math.abs(sum)>85){var d=(sum<0?1:-1)*(S.rtl?1:-1);sum=0;cooldown=now+600;action(d)}},{passive:false})}
+wheelGesture($('#rb'),function(d){if(!L.sh&&!L.sd&&!L.dl)moveSection(d)});wheelGesture($('#sh'),function(d){if(W)moveWord(d)});
+gesture($('#rb'),function(d){if(!L.sh&&!L.sd&&!L.dl)moveSection(d)});gesture($('#sh'),function(d){if(W)moveWord(d)});
+var asv=0,raf=0,lastFrame=0,scrollPos=0,asPrev=0,SP=[0,20,40,70];
+function tick(ts){if(!asv||!L.rl||document.hidden)return;var rb=$('#rb');if(Math.abs(rb.scrollTop-asPrev)>3)scrollPos=rb.scrollTop;if(lastFrame)scrollPos+=SP[asv]*Math.min(64,ts-lastFrame)/1000;lastFrame=ts;rb.scrollTop=scrollPos;asPrev=rb.scrollTop;if(rb.scrollTop+rb.clientHeight>=rb.scrollHeight-2){stopAs();toast('এই বিভাগের শেষ');rh();return}raf=requestAnimationFrame(tick)}
+function cycAs(){asv=(asv+1)%4;cancelAnimationFrame(raf);lastFrame=0;if(asv){scrollPos=$('#rb').scrollTop;asPrev=scrollPos;raf=requestAnimationFrame(tick)}rh();toast(['অটোস্ক্রল বন্ধ','অটোস্ক্রল: ধীর','অটোস্ক্রল: মাঝারি','অটোস্ক্রল: দ্রুত'][asv])}
+function stopAs(){asv=0;cancelAnimationFrame(raf);lastFrame=0}
+async function grammarFill(det){if(det.dataset.loaded)return;var ref=det.dataset.grammar.split(':').map(Number),s=ref[0],a=ref[1],i=ref[2],body=det.querySelector('.grammarbody');body.textContent='লোড হচ্ছে…';try{var data=await ld('g'+s),g=data[a][i],y=await getVerse(s,a);if(!body.isConnected)return;var parts=g.slice(0,5),descs=g.slice(5,10),lr=y.lr[i],verbs=X.verbs[lr[1]]||[];body.innerHTML='<div class="segments">'+parts.map(function(p,j){return p?'<div><span class="ar" lang="ar" dir="rtl">'+esc(p)+'</span><small>'+esc((y.pos[i]||[])[j]||'')+' · '+esc(descs[j]||'')+'</small></div>':''}).join('')+'</div>'+[['শব্দের অর্থ (Arabic)',g[12]],['সরফ',g[10]],['ইরাব',g[11]]].map(function(p){return p[1]?'<h4>'+p[0]+'</h4><p class="grammarar" lang="ar" dir="rtl">'+esc(p[1])+'</p>':''}).join('')+(verbs.length?'<h4>ক্রিয়ার রূপ</h4>'+verbs.map(function(v){return '<div class="verbforms">'+v.slice(1).map(function(ar,j){return '<div><small>'+['অতীত','বর্তমান','আদেশ','কর্তা','কর্ম','মাসদার'][j]+'</small><span lang="ar" dir="rtl">'+esc(ar||'—')+'</span></div>'}).join('')+'</div>'}).join(''):'');det.dataset.loaded='1'}catch(e){body.textContent='শব্দ বিশ্লেষণ লোড করা যায়নি।'}}
+$('#sh').addEventListener('toggle',function(e){if(e.target.matches('details[data-grammar]')&&e.target.open)grammarFill(e.target)},true);
+/* Recitation, range repeats, delay, speed, seek, and local audio downloads. */
+var au=new Audio(),ap=null,audioToken=0,delayTimer=0,eachDone=0,rangeDone=0,dlCancel=0,dbPromise=null;
+var AC=Object.assign({from:1,to:6236,each:1,loops:1,delay:0,restrict:0},S.audio||{});au.preload='auto';
+function p3(n){return ('00'+n).slice(-3)}
+function audioKey(s,a){return S.rec+':'+s+':'+a}
+function audioDB(){if(!dbPromise)dbPromise=new Promise(function(resolve,reject){var r=indexedDB.open('quran_audio_v41',1);r.onupgradeneeded=function(){r.result.createObjectStore('files')};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}});return dbPromise}
+async function dbAudio(key,blob){var db=await audioDB();return new Promise(function(resolve,reject){var tx=db.transaction('files',blob?'readwrite':'readonly'),store=tx.objectStore('files'),req=blob?store.put(blob,key):store.get(key);req.onsuccess=function(){resolve(req.result)};req.onerror=function(){reject(req.error)}})}
+var audioURL=null;
+async function pl(s,a,keep){if(!valid(s,a))return;clearTimeout(delayTimer);var token=++audioToken;if(!keep){eachDone=0;rangeDone=0}ap={s:s,a:a};au.pause();var cached=null;try{cached=await dbAudio(audioKey(s,a))}catch(e){}if(token!==audioToken)return;if(audioURL){URL.revokeObjectURL(audioURL);audioURL=null}au.src=cached?(audioURL=URL.createObjectURL(cached)):'https://everyayah.com/data/'+S.rec+'/'+p3(s)+p3(a)+'.mp3';au.playbackRate=S.speed||1;abH();highlight(true);try{await au.play()}catch(e){if(token===audioToken)toast('অডিও চালু হয়নি। ইন্টারনেট বা ডাউনলোড পরীক্ষা করুন।')}abH()}
+function stopAu(){audioToken++;clearTimeout(delayTimer);au.pause();ap=null;if(audioURL){URL.revokeObjectURL(audioURL);audioURL=null}au.removeAttribute('src');au.load();abH();highlight(false)}
+function nx(d){if(!ap)return;var n=gidx(ap.s,ap.a)+d,lo=AC.restrict?AC.from:1,hi=AC.restrict?AC.to:6236;if(n<lo||n>hi)return stopAu();var p=fromIndex(n);pl(p[0],p[1])}
+au.onended=function(){if(!ap)return;var p=Object.assign({},ap),n=gidx(p.s,p.a);eachDone++;var next=n;if(eachDone>=AC.each){eachDone=0;next=n+1;var end=AC.restrict?AC.to:6236;if(next>end){rangeDone++;if(rangeDone>=AC.loops)return stopAu();next=AC.restrict?AC.from:1}}var r=fromIndex(next),token=audioToken;delayTimer=setTimeout(function(){if(token===audioToken)pl(r[0],r[1],true)},Math.max(0,AC.delay)*1000)};
+au.onerror=function(){if(ap){clearTimeout(delayTimer);toast('এই অডিও পাওয়া যায়নি। কারী বা সংযোগ বদলান।');abH()}};
+au.onplay=au.onpause=function(){abH()};
+function abH(){['#ab','#ab2'].forEach(function(id){var b=$(id);b.style.display=ap?'flex':'none';if(!ap){b.innerHTML='';return}var rn=(RC.find(function(r){return r[0]===S.rec})||RC[0])[1];b.innerHTML='<div class="audiowrap"><div class="audioline"><button class="ib" data-u="settings" aria-label="অডিও সেটিংস">'+I(P.tune)+'</button><button class="audiotitle" data-u="verse">'+esc(M[ap.s-1][1])+' '+bn(ap.s+':'+ap.a)+'<small>'+rn+'</small></button><button class="ib" data-u="prev" aria-label="আগের আয়াত">‹</button><button class="ib" data-u="pp" aria-label="'+(au.paused?'চালু':'বিরতি')+'">'+I(au.paused?P.play:P.pause)+'</button><button class="ib" data-u="next" aria-label="পরের আয়াত">›</button><button class="ib" data-u="x" aria-label="অডিও বন্ধ">'+I(P.x)+'</button></div><div class="seekrow"><small class="audiotime">'+timeText(au.currentTime)+'</small><input type="range" min="0" max="1000" step="1" value="'+(au.duration?Math.round(au.currentTime/au.duration*1000):0)+'" data-seek aria-label="অডিওর সময়"><small class="audioduration">'+timeText(au.duration)+'</small></div></div>'})}
+function timeText(n){if(!isFinite(n))return '0:00';return Math.floor(n/60)+':'+('0'+Math.floor(n%60)).slice(-2)}
+au.ontimeupdate=function(){document.querySelectorAll('[data-seek]').forEach(function(e){if(document.activeElement!==e)e.value=au.duration?au.currentTime/au.duration*1000:0});document.querySelectorAll('.audiotime').forEach(function(e){e.textContent=timeText(au.currentTime)});document.querySelectorAll('.audioduration').forEach(function(e){e.textContent=timeText(au.duration)})};
+function highlight(follow){document.querySelectorAll('.ay.pl,.readverse.pl').forEach(function(e){e.classList.remove('pl')});if(ap&&L.rl){var el=document.getElementById('a'+ap.s+'_'+ap.a);if(el){el.classList.add('pl');if(follow&&S.follow)el.scrollIntoView({block:'center',behavior:'smooth'})}else if(follow&&S.follow)openR(ap.s,ap.a)}}
+['#ab','#ab2'].forEach(function(id){$(id).addEventListener('click',function(e){var b=e.target.closest('[data-u]');if(!b||!ap)return;var k=b.dataset.u;if(k==='pp'){clearTimeout(delayTimer);if(au.paused)au.play().catch(function(){toast('অডিও চালু হয়নি')});else au.pause()}else if(k==='x')stopAu();else if(k==='next')nx(1);else if(k==='prev')nx(-1);else if(k==='settings')audioSettings();else if(k==='verse')openR(ap.s,ap.a)});$(id).addEventListener('input',function(e){if(e.target.hasAttribute('data-seek')&&isFinite(au.duration))au.currentTime=au.duration*e.target.value/1000})});
+function audioSettings(){var p=L.rl?reference():S.last[0]||[1,1],lo=fromIndex(AC.from),hi=fromIndex(AC.to);sheet('অডিও সেটিংস','<div class="formgrid"><button class="btn" id="recpick">কারী: '+esc((RC.find(function(r){return r[0]===S.rec})||RC[0])[1])+'</button><label>শুরু (সূরা:আয়াত)<input id="afrom" value="'+lo.join(':')+'"></label><label>শেষ (সূরা:আয়াত)<input id="ato" value="'+hi.join(':')+'"></label><label>প্রতি আয়াত পুনরাবৃত্তি<input id="aeach" type="number" min="1" max="50" value="'+AC.each+'"></label><label>সীমা পুনরাবৃত্তি<input id="aloops" type="number" min="1" max="50" value="'+AC.loops+'"></label><label>বিরতি (সেকেন্ড)<input id="adelay" type="number" min="0" max="30" value="'+AC.delay+'"></label><label>গতি<select id="aspeed">'+[.5,.75,1,1.25,1.5,2].map(function(n){return '<option'+(n===S.speed?' selected':'')+'>'+n+'</option>'}).join('')+'</select></label><label class="checkline"><input id="arestrict" type="checkbox"'+(AC.restrict?' checked':'')+'>শুধু নির্ধারিত সীমা</label><label class="checkline"><input id="afollow" type="checkbox"'+(S.follow?' checked':'')+'>আয়াতের সাথে স্ক্রল</label><button class="btn" id="astart">'+(ap?'সেটিংস প্রয়োগ ও চালু':'চালু করুন')+'</button><button class="btn" id="adownloads">অডিও ডাউনলোড</button><small>ডাউনলোড করা অডিও অফলাইনে চলে। অন্য অডিওতে ইন্টারনেট লাগবে।</small></div>',function(e){if(e.target.closest('#recpick'))pick('অডিও কারী',RC,[S.rec],0,function(v){S.rec=v[0];save();audioSettings()});else if(e.target.closest('#adownloads'))audioDownloads(p[0]);else if(e.target.closest('#astart')){var a=parseRef($('#afrom').value),b=parseRef($('#ato').value),each=num($('#aeach').value),loops=num($('#aloops').value),delay=num($('#adelay').value);if(!a||!b||gidx.apply(null,a)>gidx.apply(null,b)||!Number.isInteger(each)||each<1||each>50||!Number.isInteger(loops)||loops<1||loops>50||!isFinite(delay)||delay<0||delay>30)return toast('অডিও সীমা ও সংখ্যা ঠিক করুন');AC={from:gidx.apply(null,a),to:gidx.apply(null,b),each:each,loops:loops,delay:delay,restrict:$('#arestrict').checked?1:0};S.audio=AC;S.speed=+$('#aspeed').value;S.follow=$('#afollow').checked?1:0;save();closeAll();var r=AC.restrict?a:p;pl(r[0],r[1])}})}
+async function audioDownloads(s){var db=null,keys=[];try{db=await audioDB();keys=await new Promise(function(resolve,reject){var r=db.transaction('files').objectStore('files').getAllKeys();r.onsuccess=function(){resolve(r.result)};r.onerror=reject})}catch(e){}var count=keys.filter(function(k){return k.startsWith(S.rec+':'+s+':')}).length;sheet('অডিও ডাউনলোড — '+esc(M[s-1][1]),'<div class="formgrid"><p>'+bn(count)+' / '+bn(M[s-1][2])+' আয়াত সংরক্ষিত</p><p>নির্বাচিত কারী: '+esc((RC.find(function(r){return r[0]===S.rec})||RC[0])[1])+'</p><button class="btn" id="downloadsurah"'+(!db?' disabled':'')+'>এই সূরা ডাউনলোড করুন</button><button class="btn" id="canceldl">ডাউনলোড থামান</button><div id="dlprogress" role="status"></div><button class="btn" id="clearaudio">এই সূরার অডিও মুছুন</button>'+(!db?'<p>এই ব্রাউজারে অডিও সংরক্ষণ চালু নেই।</p>':'')+'</div>',async function(e){if(e.target.closest('#canceldl')){dlCancel++;toast('ডাউনলোড থামানো হয়েছে')}else if(e.target.closest('#clearaudio')&&db){var tx=db.transaction('files','readwrite');keys.filter(function(k){return k.startsWith(S.rec+':'+s+':')}).forEach(function(k){tx.objectStore('files').delete(k)});tx.oncomplete=function(){audioDownloads(s)}}else if(e.target.closest('#downloadsurah')){var token=++dlCancel,rec=S.rec,done=count,fail=0,button=$('#downloadsurah');button.disabled=true;for(var a=1;a<=M[s-1][2];a++){if(token!==dlCancel)break;var key=rec+':'+s+':'+a;if(keys.includes(key))continue;try{var r=await fetch('https://everyayah.com/data/'+rec+'/'+p3(s)+p3(a)+'.mp3');if(!r.ok)throw Error('HTTP '+r.status);var blob=await r.blob();if(blob.size<512||/text|json|html/.test(blob.type))throw Error('Invalid audio');await dbAudio(key,blob);done++}catch(err){fail++;if(fail>=3){toast('ডাউনলোডে সমস্যা। সংযোগ বা ব্রাউজারের অনুমতি পরীক্ষা করুন।');break}}var el=$('#dlprogress');if(el)el.textContent=bn(done)+' / '+bn(M[s-1][2])+' সংরক্ষিত · '+bn(fail)+' ব্যর্থ'}if(button.isConnected)button.disabled=false;toast('সংরক্ষিত: '+bn(done)+' আয়াত')}})}
+/* Search all embedded verse/word data without an external API. */
+var searchToken=0,searchResults=[],searchShown=0;
+function parseRef(q){var m=String(q).replace(/[০-৯]/g,function(c){return BD.indexOf(c)}).match(/^(\d{1,3})\s*[:.\s]\s*(\d{1,3})$/);if(!m)return null;var s=+m[1],a=+m[2];return valid(s,a)?[s,a]:null}
+function openSearch(q,corpus){searchToken++;sheet(corpus?'শব্দের '+(corpus.type==='root'?'রুট':'লেমা')+' অনুসন্ধান':'সব জায়গায় খুঁজুন','<div class="formgrid searchform"><input id="gq" placeholder="বাংলা, English, العربية অথবা ২:২৫৫" value="'+attr(q||'')+'"><div class="searchfilters"><select id="searchkind"><option value="all">সব লেখা</option><option value="ar">আরবি</option><option value="bn">বাংলা অনুবাদ</option><option value="en">English</option><option value="word">শব্দার্থ</option></select><select id="searchsurah"><option value="0">সব সূরা</option>'+M.map(function(m){return '<option value="'+m[0]+'">'+bn(m[0])+'. '+esc(m[1])+'</option>'}).join('')+'</select></div><label class="checkline"><input id="searchexact" type="checkbox">সম্পূর্ণ শব্দ মিলান</label></div><div id="searchstatus" class="searchstatus" aria-live="polite"></div><div id="gr"></div>',function(e){var b=e.target.closest('[data-ref],[data-searchmore],[data-wordref]');if(!b)return;if(b.hasAttribute('data-searchmore'))paintResults();else if(b.dataset.wordref){var p=b.dataset.wordref.split(':').map(Number);wordSheet(p[0],p[1],p[2])}else{var p=b.dataset.ref.split(':').map(Number);closeAll();openR(p[0],p[1])}});var tm;function run(){clearTimeout(tm);tm=setTimeout(function(){runSearch($('#gq').value,corpus)},250)}$('#gq').oninput=run;$('#searchkind').onchange=$('#searchsurah').onchange=$('#searchexact').onchange=run;$('#gq').focus();if(q)runSearch(q,corpus)}
+function corpusSearch(type,val){if(!val)return;openSearch(val,{type:type,val:val})}
+async function runSearch(q,corpus){var token=++searchToken,out=$('#gr'),status=$('#searchstatus');if(!out)return;out.innerHTML='';searchResults=[];searchShown=0;if(!q.trim()){status.textContent='';return}var ref=parseRef(q),looksRef=/^[০-৯\d]+\s*[:.]\s*[০-৯\d]+$/.test(q);if(ref){searchResults=[{s:ref[0],a:ref[1],text:'সরাসরি আয়াতে যান'}];status.textContent='১টি ফলাফল';paintResults();return}if(looksRef){status.textContent='এই সূরা বা আয়াত নম্বর নেই।';return}var kind=$('#searchkind').value,sur=+$('#searchsurah').value,exact=$('#searchexact').checked,needle=norm(q);function match(t){var hay=norm(t);return exact?hay.split(/[\s,.;:!?،۔]+/u).includes(needle):hay.includes(needle)}
+for(var s=1;s<=114;s++){if(sur&&s!==sur)continue;if(token!==searchToken||!$('#gr'))return;status.textContent='খোঁজা হচ্ছে… '+bn(s)+' / ১১৪';var d=await ld('c'+s);if(token!==searchToken)return;
+if(!corpus&&match(M[s-1][1]+' '+M[s-1][3]+' '+M[s-1][4]))searchResults.push({s:s,a:1,text:'সূরার নাম'});
+d.ay.forEach(function(y){if(corpus){y.lr.forEach(function(lr,i){if(norm(lr[corpus.type==='root'?1:0])===needle)searchResults.push({s:s,a:y.a,i:i,text:words(y)[i]+' · '+y.w[i].join(' / ')})});return}var fields=[];if(kind==='all'||kind==='ar')fields.push(y.ar,y.ip);if(kind==='all'||kind==='bn')fields.push(y.m,y.b,plain(y.t));if(kind==='all'||kind==='en')fields.push(y.en);if(kind==='word')fields.push(y.w.map(function(w){return w.join(' / ')}).join(' · '));var hit=fields.find(function(t){return t&&match(t)});if(hit){var ix=norm(hit).indexOf(needle),start=Math.max(0,ix-35);searchResults.push({s:s,a:y.a,text:plain(hit).slice(start,start+220)})}});await new Promise(function(r){setTimeout(r,0)})}
+if(token!==searchToken)return;status.textContent=bn(searchResults.length)+'টি ফলাফল';paintResults()}
+function paintResults(){var out=$('#gr');if(!out)return;searchShown=Math.min(searchResults.length,searchShown+60);out.innerHTML=searchResults.slice(0,searchShown).map(function(r){return '<button class="sr" '+(r.i!==undefined?'data-wordref="'+r.s+':'+r.a+':'+r.i+'"':'data-ref="'+r.s+':'+r.a+'"')+'><b>'+esc(M[r.s-1][1])+' '+bn(r.s+':'+r.a)+(r.i!==undefined?':'+bn(r.i+1):'')+'</b><small dir="auto">'+esc(r.text)+'</small></button>'}).join('')+(searchShown<searchResults.length?'<button class="wcx" data-searchmore>আরও ফলাফল ('+bn(searchResults.length-searchShown)+')</button>':'')}
+/* Settings, source verification, pronunciation examples, and backup. */
+function dlH(){$('#dl').innerHTML='<div class="dh"><div class="lg">قرآن</div><h2>আল কুরআন</h2><small>তাফসির এবং শব্দে শব্দে · v4.1</small></div>'+[['jump',P.jump,'নির্দিষ্ট আয়াতে যান'],['search',P.search,'সব জায়গায় খুঁজুন'],['tajweed',P.cap,'তাজউইদের নিয়ম ও উচ্চারণ'],['xb',P.book,'তাফহীম — ভূমিকা ও পরিশিষ্ট'],['set',P.gear,'সেটিংস'],['audit',P.note,'এই সংস্করণ ও তথ্য যাচাই'],['backup',P.lib,'ব্যাকআপ এক্সপোর্ট'],['restore',P.lib,'ব্যাকআপ ইমপোর্ট']].map(function(p){return '<button class="mi" data-d="'+p[0]+'">'+I(p[1])+p[2]+'</button>'}).join('')}
+function setH(){var cb=function(k,label){return '<label><input type="checkbox" data-c="'+k+'"'+(S.c[k]?' checked':'')+'>'+label+'</label>'};$('#sd').innerHTML='<div class="hd" style="background:var(--bg);color:var(--tx)"><h1>সেটিংস</h1><button class="ib" data-close-settings aria-label="বন্ধ করুন">'+I(P.x)+'</button></div><div class="sh2">পড়ার বিভাগ</div><div class="rg">'+Object.keys(LABEL).map(function(k){return '<label><input type="radio" name="view" data-vw="'+k+'"'+((L.rl?R.view:S.view)===k?' checked':'')+'>'+LABEL[k]+'</label>'}).join('')+'</div><div class="sh2">কনটেন্ট</div><div class="rg">'+cb('ar','আরবি')+cb('tr','অনুবাদ')+cb('tf','তাফসির')+cb('wbw','শব্দে শব্দে')+cb('tj','তাজউইদ রং (উসমানী)')+'</div><div class="sh2">আরবি লিপি</div><div class="rg">'+[['indo','ইন্দোপাক / এশিয়ান'],['uthmani','উসমানী / মাদানী']].map(function(p){return '<label><input type="radio" name="script" data-script="'+p[0]+'"'+(S.script===p[0]?' checked':'')+'>'+p[1]+'</label>'}).join('')+'</div><div class="sx"><small>লিপি ও ফন্ট আলাদা। হরকতসহ পাঠ মূল অ্যাপ থেকে নেওয়া। তাজউইদের রং v4-এর উসমানী স্তরে রাখা হয়েছে।</small></div>'+[['tr','অনুবাদ',bn(S.trs.length)+' নির্বাচিত'],['tf','তাফসির',bn(S.tfs.length)+' নির্বাচিত'],['wl','শব্দার্থের ভাষা',{bn:'বাংলা',en:'English',both:'বাংলা + English'}[S.wl]],['fo','আরবি ফন্ট',FO[S.font]],['rc','অডিও কারী',(RC.find(function(r){return r[0]===S.rec})||RC[0])[1]]].map(function(p){return '<button class="sx mi" data-p="'+p[0]+'" style="display:block;width:100%;text-align:left">'+p[1]+'<small>'+esc(p[2])+'</small></button>'}).join('')+'<div class="sx">আরবি ফন্ট সাইজ</div><div class="sl"><input type="range" min="20" max="60" value="'+S.asz+'" data-size="asz" aria-label="আরবি ফন্ট সাইজ"><span id="va">'+bn(S.asz)+'</span></div><div class="sx">অনুবাদ ফন্ট সাইজ</div><div class="sl"><input type="range" min="14" max="32" value="'+S.bsz+'" data-size="bsz" aria-label="অনুবাদ ফন্ট সাইজ"><span id="vb">'+bn(S.bsz)+'</span></div><div class="sh2">থিম</div><div class="rg">'+[['light','হালকা'],['sepia','সেপিয়া'],['dark','গাঢ়']].map(function(p){return '<label><input type="radio" name="theme" data-th="'+p[0]+'"'+(S.theme===p[0]?' checked':'')+'>'+p[1]+'</label>'}).join('')+'</div><div class="sh2">পড়ার সুবিধা</div><div class="rg"><label><input type="checkbox" id="swipedirection"'+(S.rtl?' checked':'')+'>বাম থেকে ডানে সোয়াইপে পরের অংশ</label><label><input type="checkbox" id="keepscreen"'+(S.keepScreen?' checked':'')+'>পড়ার সময় স্ক্রিন চালু রাখুন</label></div><button class="mi" data-tajweed>তাজউইদের নিয়ম ও উচ্চারণ</button><button class="mi" data-audit>এই সংস্করণ ও তথ্য যাচাই</button><button class="mi" data-backup>ব্যাকআপ এক্সপোর্ট</button><button class="mi" data-restore>ব্যাকআপ ইমপোর্ট</button>'}
+function openSet(){setH();dr('sd',1)}
+$('#sd').onclick=function(e){var b=e.target.closest('[data-p],[data-close-settings],[data-backup],[data-restore],[data-audit],[data-tajweed]');if(!b)return;if(b.hasAttribute('data-close-settings'))return dr('sd',0);if(b.hasAttribute('data-backup'))return exportBackup();if(b.hasAttribute('data-restore'))return importBackup();if(b.hasAttribute('data-audit'))return auditSheet();if(b.hasAttribute('data-tajweed'))return tajweedSheet();var p=b.dataset.p;if(p==='tr'||p==='tf')pick(p==='tr'?'অনুবাদ':'তাফসির',Object.entries(p==='tr'?TR:TF),p==='tr'?S.trs.slice():S.tfs.slice(),true,function(v){S[p==='tr'?'trs':'tfs']=v;save();setH();rr()});else if(p==='wl')pick('শব্দার্থের ভাষা',[['bn','বাংলা'],['en','English'],['both','বাংলা + English']],[S.wl],false,function(v){S.wl=v[0];save();setH();rr()});else if(p==='fo')pick('আরবি ফন্ট',Object.entries(FO),[S.font],false,function(v){S.font=v[0];apply();save();setH();rr()});else if(p==='rc')pick('অডিও কারী',RC,[S.rec],false,function(v){S.rec=v[0];save();setH();if(ap)pl(ap.s,ap.a)})};
+$('#sd').onchange=function(e){var t=e.target;if(t.dataset.c){S.c[t.dataset.c]=t.checked?1:0;apply();save();rr()}else if(t.dataset.th){S.theme=t.dataset.th;apply();save()}else if(t.dataset.script){var p=L.rl?reference():null;S.script=t.dataset.script;apply();save();if(p)rr(p[1],p[0])}else if(t.dataset.vw){S.view=t.dataset.vw;save();if(L.rl){var p=reference();openR(p[0],p[1],S.view)}else{ht=S.view;show('home')}}else if(t.id==='swipedirection'){S.rtl=t.checked?1:0;save()}else if(t.id==='keepscreen'){S.keepScreen=t.checked?1:0;save();wakeScreen()}};
+$('#sd').oninput=function(e){var t=e.target;if(!t.dataset.size)return;var p=L.rl?reference():null;S[t.dataset.size]=+t.value;$(t.dataset.size==='asz'?'#va':'#vb').textContent=bn(t.value);apply();save();if(p)jump(p[0],p[1],false)};
+function auditSheet(){sheet('v4.1 — পরিবর্তন ও তথ্য যাচাই','<div class="prose"><h4>আরবি যাচাই</h4><p>আপনার দেওয়া Android 1.35.8 ও macOS প্যাকেজের ডেটাবেস পরীক্ষা করা হয়েছে। ১১৪টি সূরার ৬,২৩৬টি উসমানী এবং ৬,২৩৬টি ইন্দোপাক আয়াত হুবহু সংযুক্ত আছে। ৭৭,৪২৯টি শব্দের অবস্থান, শব্দ বিশ্লেষণ এবং রুট/লেমা মিলিয়ে নেওয়া হয়েছে।</p><p>v4-এর মূল উসমানী পাঠে অক্ষর বা হরকত পরিবর্তন পাওয়া যায়নি; ৩৭:১৩০-এ একটি সূক্ষ্ম ফাঁকের পার্থক্য ছিল। বড় সমস্যা ছিল ইন্দোপাক ফন্টে উসমানী লেখা দেখানো এবং প্রদর্শনের সময় ٱ-কে ا বানানো। এখন দুই লিপির পাঠ আলাদা এবং এমন প্রতিস্থাপন নেই। মূল অ্যাপের ফন্টও সংযুক্ত।</p><h4>নতুন পড়ার সুবিধা</h4><ul><li>দুই দিকে সোয়াইপ ও কিবোর্ডে বিভাগ বদল। শুরু ও শেষে সঠিক সীমা।</li><li>একক আয়াত ও একক শব্দে সোয়াইপ; সূরার সীমানা পেরিয়ে চলা।</li><li>৬০৪ পৃষ্ঠা, ৩০ পারা, ৬০ হিজব, ২৪০ চতুর্থাংশ এবং ৫৫৮ রুকুর মূল সূচি।</li><li>আরবি, বাংলা, English ও শব্দার্থ খোঁজা; রুট/লেমার সব ব্যবহার।</li><li>৩১৭টি মূল বিষয় ও উপবিষয়, আয়াত কপি/শেয়ার, নোট ও পিনের ফোল্ডার।</li><li>অফলাইন English অনুবাদ, পড়ার স্থান মনে রাখা, সক্রিয় সময় গণনা।</li><li>অডিও সীমা, পুনরাবৃত্তি, বিরতি, গতি, সময় নির্বাচন ও ডাউনলোড।</li><li>কাস্টম প্ল্যান ও সম্পন্ন সেশন; ব্যাকআপ এক্সপোর্ট/ইমপোর্ট।</li></ul><h4>যাচাইয়ের সীমা</h4><p>এটি আপলোড করা অ্যাপের ডেটার সঙ্গে অক্ষরভিত্তিক মিল পরীক্ষা। স্বতন্ত্র মুসহাফ বা আলেমের প্রুফরিডিংয়ের সনদ নয়। দুই প্যাকেজের ইন্দোপাক সংস্করণে পার্থক্য আছে; এখানে Android 1.35.8-এর পাঠ ব্যবহার করা হয়েছে। মূল প্যাকেজ ইন্দোপাককে Beta বলেছে। অনুবাদ ও তাফসিরের v4 পাঠ রাখা হয়েছে। উসমানী তাজউইদের রং v4 থেকে সংরক্ষিত; নতুন করে প্রতিটি নিয়মের শুদ্ধতা সনদ দেওয়া হয়নি।</p><p>সম্পূর্ণ অডিও প্যাকেজে ছিল না। ডাউনলোড ছাড়া তিলাওয়াতের অডিওতে ইন্টারনেট লাগে। GTAF অ্যাকাউন্ট সিঙ্ক, নেটিভ উইজেট/নোটিফিকেশন, ভয়েস সার্চ এবং ছবি-ভিত্তিক মুসহাফ এই এক ফাইলের সংস্করণে যুক্ত হয়নি।</p><button class="btn" id="auditdownload">যাচাইয়ের রেকর্ড সংরক্ষণ</button></div>',function(e){if(e.target.closest('#auditdownload'))download('Quran_v4_1_Data_Audit.json',JSON.stringify(X.audit,null,2),'application/json')})}
+var TJ=[['ghunna','গুন্নাহ','Any نّ or مّ will have a sound that emanates from the nose.','#D06900'],['ikhfa','ইখফা','Any نْ or ً ٍ ٌ followed by any of these letters ك ق ف ظ ط ض ص ش س ز ذ د ج ث ت will be pronounced with a slight nasal sound.','#B60000'],['idgham','ইদগাম','Any نْ or ً ٍ ٌ followed by و م ن ي will become assimilated into the following letter and will be read with Ghunna.','#B856C7'],['idghamwg','গুন্নাহ ছাড়া ইদগাম','Any نْ or ً ٍ ٌ followed by ل or ر will become assimilated into the following letter but the ghunna will not be pronounced.','#AAA'],['iqlab','ইকলাব','Any نْ or ً ٍ ٌ followed by ب will change into a م.','#3065C5'],['qalqala','কলকলাহ','د ج ب ط ق with a Sukun or at the end of a verse are pronounced with a slight echoing sound.','#309900']];
+function tajweedSheet(){sheet('তাজউইদের নিয়ম ও উচ্চারণ','<div class="prose"><p>মূল অ্যাপের উচ্চারণের উদাহরণ। অডিওগুলো অফলাইনে চলবে।</p>'+TJ.map(function(p){return '<div class="card"><h4 style="color:'+p[3]+'">'+p[1]+'</h4><p lang="en">'+esc(p[2])+'</p><audio controls preload="none" src="'+X.rules[p[0]]+'"></audio></div>'}).join('')+'</div>')}
+function download(name,text,type){var url=URL.createObjectURL(new Blob([text],{type:type||'application/json'})),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},10000)}
+function exportBackup(){download('Al_Quran_Backup_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({app:'al-quran-html',version:4.1,savedAt:new Date().toISOString(),settings:S},null,2));toast('ব্যাকআপ এক্সপোর্ট হয়েছে')}
+function importBackup(){var input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async function(){var f=input.files[0];if(!f)return;try{if(f.size>5000000)throw Error('size');var obj=JSON.parse(await f.text()),v=obj.settings||obj;if(obj.settings&&obj.app!=='al-quran-html')throw Error('format');if(!Array.isArray(v.pins)||!v.notes||typeof v.notes!=='object')throw Error('format');var pins=v.pins.filter(function(p){return Array.isArray(p)&&valid(+p[0],+p[1])}).map(function(p){return [+p[0],+p[1]]});var notes={};Object.keys(v.notes).forEach(function(k){if(parseRef(k)&&typeof v.notes[k]==='string')notes[k]=v.notes[k].slice(0,100000)});sheet('ব্যাকআপ ইমপোর্ট করুন','<div class="prose"><p>'+bn(pins.length)+'টি পিন ও '+bn(Object.keys(notes).length)+'টি নোট পাওয়া গেছে। বর্তমান পিন ও নোটের সঙ্গে যোগ হবে। একই আয়াতের নোট থাকলে ব্যাকআপের নোট বসবে। সেটিংস, পড়ার স্থান, পরিসংখ্যান ও প্ল্যানও ফিরবে।</p><button class="btn" id="restoreconfirm">ইমপোর্ট করুন</button></div>',function(e){if(!e.target.closest('#restoreconfirm'))return;pins.forEach(function(p){if(!S.pins.some(function(a){return a[0]===p[0]&&a[1]===p[1]}))S.pins.push(p)});Object.assign(S.notes,notes);if(Array.isArray(v.folders))v.folders.filter(function(f){return typeof f==='string'&&f.length<81}).forEach(function(f){if(!S.folders.includes(f))S.folders.push(f)});if(v.pinFolders&&typeof v.pinFolders==='object')Object.keys(v.pinFolders).forEach(function(k){if(parseRef(k)&&S.folders.includes(v.pinFolders[k]))S.pinFolders[k]=v.pinFolders[k]});if(v.st&&typeof v.st==='object')Object.keys(v.st).forEach(function(k){if(/^\d{4}-\d{1,2}-\d{1,2}$/.test(k)&&Number.isFinite(v.st[k])&&v.st[k]>=0)S.st[k]=Math.max(S.st[k]||0,v.st[k])});if(Array.isArray(v.last)){var combined=v.last.concat(S.last),seen=new Set();S.last=combined.filter(function(p){if(!Array.isArray(p)||!valid(+p[0],+p[1])||seen.has(+p[0]))return false;seen.add(+p[0]);return true}).slice(0,8)}if(['light','dark','sepia'].includes(v.theme))S.theme=v.theme;if(FO[v.font])S.font=v.font;if(['indo','uthmani'].includes(v.script))S.script=v.script;if(['bn','en','both'].includes(v.wl))S.wl=v.wl;if(Number.isFinite(v.asz))S.asz=Math.max(20,Math.min(60,v.asz));if(Number.isFinite(v.bsz))S.bsz=Math.max(14,Math.min(32,v.bsz));if(Array.isArray(v.trs)){var tr=v.trs.filter(function(k){return TR[k]});if(tr.length)S.trs=tr}if(Array.isArray(v.tfs)){var tf=v.tfs.filter(function(k){return TF[k]});if(tf.length)S.tfs=tf}apply();if(v.plan&&typeof v.plan==='object'&&Number.isInteger(v.plan.start)&&Number.isInteger(v.plan.end)&&v.plan.start>=1&&v.plan.end<=6236&&v.plan.start<=v.plan.end&&Number.isInteger(v.plan.days)&&v.plan.days>=1&&v.plan.days<=365&&Array.isArray(v.plan.done)){S.plan={name:String(v.plan.name||'কুরআন পাঠ').slice(0,100),start:v.plan.start,end:v.plan.end,days:v.plan.days,done:v.plan.done.filter(function(n){return Number.isInteger(n)&&n>=0&&n<v.plan.days})}}save();closeAll();if(L.rl)rr();else show(tab);toast('ব্যাকআপ ইমপোর্ট হয়েছে')})}catch(e){toast('সঠিক কুরআন অ্যাপের JSON ব্যাকআপ দিন।')}};input.click()}
+async function openXB(){var x=await ld('xb');sheet('তাফহীমুল কুরআন',x.map(function(b,i){return '<button class="op" data-xb="'+i+'">'+esc(b[0])+'</button>'}).join(''),function(e){var b=e.target.closest('[data-xb]');if(!b)return;var it=x[+b.dataset.xb];sheet(esc(it[0]),'<div class="prose">'+it[1].map(function(z){return (z.t?'<h4>'+esc(z.t)+'</h4>':'')+fmt(z.x)}).join('')+'</div>')})}
+function gotoAy(){var ref=L.rl?reference():[1,1];sheet('নির্দিষ্ট আয়াতে যান','<div class="formgrid"><label>সূরা<select id="gs">'+M.map(function(m){return '<option value="'+m[0]+'"'+(ref[0]===m[0]?' selected':'')+'>'+bn(m[0])+'. '+esc(m[1])+'</option>'}).join('')+'</select></label><label>আয়াত<input id="ga" inputmode="numeric" value="'+ref[1]+'"></label><button class="btn" id="gb">যান</button></div>',function(e){if(!e.target.closest('#gb'))return;var s=+$('#gs').value,a=num($('#ga').value);if(!valid(s,a))return toast('এই সূরায় ১–'+bn(M[s-1][2])+' আয়াত আছে');closeAll();openR(s,a)});$('#gs').onchange=function(){$('#ga').value='1'}}
+/* Main interactions. */
+$('#hd').onclick=function(e){var b=e.target.closest('[data-a]');if(!b)return;if(b.dataset.a==='menu'){dlH();dr('dl',!L.dl)}else openSearch()};
+$('#bn').onclick=function(e){var b=e.target.closest('[data-t]');if(b)show(b.dataset.t)};
+$('#dl').onclick=function(e){var b=e.target.closest('[data-d]');if(!b)return;dr('dl',0);var k=b.dataset.d;if(k==='jump')gotoAy();else if(k==='search')openSearch();else if(k==='set')openSet();else if(k==='xb')openXB();else if(k==='tajweed')tajweedSheet();else if(k==='audit')auditSheet();else if(k==='backup')exportBackup();else if(k==='restore')importBackup()};
+$('#mn').onclick=function(e){var b=e.target.closest('[data-s],[data-h],[data-vw],[data-topic],[data-l],[data-folder],[data-newfolder],[data-libedit],[data-plannew],[data-plandelete],[data-session],[data-backup],[data-restore]');if(!b)return;if(b.dataset.s)openR(+b.dataset.s,+b.dataset.ay||1);else if(b.dataset.h){ht=b.dataset.h;show('home')}else if(b.dataset.vw){var ix=+b.dataset.idx,p=X.nav[b.dataset.vw][ix];openR(p[0],p[1],b.dataset.vw,ix)}else if(b.dataset.topic)openTopic(+b.dataset.topic);else if(b.dataset.l){lt=b.dataset.l;show('lib')}else if(b.hasAttribute('data-folder')){folderFilter=b.dataset.folder;show('lib')}else if(b.hasAttribute('data-newfolder'))newFolder();else if(b.dataset.libedit){var p=b.dataset.libedit.split(':').map(Number);if(lt==='note')editNote(p[0],p[1]);else chooseFolder(p[0],p[1])}else if(b.hasAttribute('data-plannew'))createPlan();else if(b.hasAttribute('data-plandelete')){S.plan=0;save();show('plan')}else if(b.dataset.session){var p=S.plan,n=p.start+Math.floor((p.end-p.start+1)*(+b.dataset.session)/p.days),ref=fromIndex(n);openR(ref[0],ref[1])}else if(b.hasAttribute('data-backup'))exportBackup();else if(b.hasAttribute('data-restore'))importBackup()};
+$('#mn').oninput=function(e){var t=e.target;if(t.id==='lq'){lq=t.value;var pos=t.selectionStart;$('#mn').innerHTML=libH();$('#lq').focus();$('#lq').setSelectionRange(pos,pos)}else if(t.id==='indexq'){var n=num(t.value);document.querySelectorAll('.sectionrow').forEach(function(b){b.hidden=!!t.value&&+b.dataset.idx+1!==n})}else if(t.id==='topicq'){var q=norm(t.value);var html=X.topics.filter(function(x){return q?norm(x[1]+' '+x[2]).includes(q):!x[5]}).map(topicRow).join('');$('#mn').querySelectorAll('.topicrow').forEach(function(x){x.remove()});$('#mn').insertAdjacentHTML('beforeend',html)}};
+$('#mn').onchange=function(e){var b=e.target;if(b.hasAttribute('data-sessiondone')&&S.plan){var n=+b.dataset.sessiondone,ix=S.plan.done.indexOf(n);if(b.checked&&ix<0)S.plan.done.push(n);else if(!b.checked&&ix>=0)S.plan.done.splice(ix,1);save();show('plan')}};
+var wake=null;async function wakeScreen(){if(wake){await wake.release();wake=null}if(S.keepScreen&&L.rl&&!document.hidden&&navigator.wakeLock){try{wake=await navigator.wakeLock.request('screen')}catch(e){toast('এই ব্রাউজারে স্ক্রিন চালু রাখা যায়নি')}}}
+var lastActivity=Date.now();['pointerdown','keydown','wheel','touchstart'].forEach(function(name){document.addEventListener(name,function(){lastActivity=Date.now()}, {passive:true})});
+setInterval(function(){if(L.rl&&!L.sh&&!L.sd&&!L.dl&&!document.hidden&&Date.now()-lastActivity<300000){S.st[today()]=(S.st[today()]||0)+15;save()}},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){cancelAnimationFrame(raf);lastFrame=0;if(L.rl){var p=reference();remember(p[0],p[1])}}else{lastActivity=Date.now();if(asv)raf=requestAnimationFrame(tick);wakeScreen()}});
+window.addEventListener('pagehide',function(){if(L.rl){var p=reference();remember(p[0],p[1])}});
+function backAction(){if(L.sh||L.sd||L.dl)closeAll();else if(L.rl)closeR();else return false;return true}
+try{history.replaceState({quran:true},'');history.pushState({quran:true},'');window.addEventListener('popstate',function(){if(backAction())history.pushState({quran:true},'')})}catch(e){}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){backAction();return}if(e.key==='Tab'&&L.sh){var focus=Array.from($('#sh').querySelectorAll('button:not([disabled]),input,textarea,select,a[href]')).filter(function(el){return el.offsetParent!==null});if(focus.length){var first=focus[0],last=focus[focus.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}}if(e.target.closest('input,textarea,select'))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var d=(e.key==='ArrowRight'?1:-1)*(S.rtl?1:-1);if(W){e.preventDefault();moveWord(d)}else if(L.rl&&!L.sh&&!L.sd&&!L.dl){e.preventDefault();moveSection(d)}}else if(e.key==='Enter'&&e.target.classList.contains('readverse'))singleSheet(+e.target.dataset.s,+e.target.dataset.a)});
+apply();
+(async function(){try{X=await ld('extra');JZ=X.nav.juz;show('home')}catch(e){$('#mn').innerHTML='<div class="note">এই ফাইল চালাতে DecompressionStream সমর্থিত আধুনিক ব্রাউজার দরকার।</div>';console.error(e)}})();
+})();
+</script><script>
+(function(){var dip;function bar(){if(!dip||matchMedia('(display-mode: standalone)').matches||document.getElementById('pwaI'))return;var b=document.createElement('button');b.id='pwaI';b.textContent='📲 অ্যাপ ইনস্টল করুন';b.onclick=function(){dip.prompt();dip.userChoice.then(function(){b.remove();dip=null})};document.body.appendChild(b);setTimeout(function(){b.remove()},25000)}
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();dip=e;bar()});
+addEventListener('appinstalled',function(){var b=document.getElementById('pwaI');if(b)b.remove();warm()});
+function warm(){navigator.serviceWorker&&navigator.serviceWorker.ready.then(function(r){r.active&&r.active.postMessage('warm')})}window.warmOffline=warm;
+if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',function(){navigator.serviceWorker.register('sw.js')})})();
+</script>
+</body></html>
