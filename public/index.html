@@ -99,7 +99,12 @@ button,input,select,textarea{font:inherit;color:inherit}button:disabled{opacity:
 @font-face{font-family:'Kalpurush';src:url(fonts/kalpurush.d9906765.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/favicon.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="আল কুরআন"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="robots" content="noindex,nofollow">
-<style>#pwaI{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:200;background:#fff;color:#2d6a3a;border:1.5px solid #4f9157;border-radius:30px;padding:10px 18px;font:600 15px system-ui,sans-serif;box-shadow:0 6px 22px #0003}</style></head>
+<style>.qa-card{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:300;max-width:520px;margin:0 auto;background:#fff;color:#1d2a23;border:1px solid #cfe3d3;border-radius:16px;box-shadow:0 8px 28px #0003;padding:12px 14px;display:flex;align-items:center;gap:12px;font:15px/1.45 'Kalpurush','Noto Sans Bengali',system-ui,sans-serif;animation:qaIn .35s ease}
+.qa-card img{width:44px;height:44px;border-radius:10px;flex:none}.qa-card b{display:block;font-size:16px}.qa-card small{display:block;color:#5d6f63;font-size:13px}
+.qa-card .qa-go{background:#4f9157;color:#fff;border:0;border-radius:22px;padding:9px 16px;font:inherit;font-weight:600;white-space:nowrap}.qa-card .qa-x{background:none;border:0;font-size:24px;line-height:1;color:#7a8a80;padding:2px 6px}
+#qaUpd,#qaOk{top:calc(10px + env(safe-area-inset-top));bottom:auto}
+html[data-theme=dark] .qa-card{background:#1b2a22;color:#e6efe9;border-color:#2e4a3a}html[data-theme=dark] .qa-card small{color:#9fb5a7}
+@keyframes qaIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}</style></head>
 <body>
 <div id="app"><div class="hd" id="hd"></div><div id="mn"></div><div id="ab"></div><nav id="bn"></nav></div>
 <div class="lay" id="rl"><div class="hd" id="rh"></div><div id="rb"></div><div id="ab2"></div><div id="rf"></div></div>
@@ -525,10 +530,39 @@ apply();
 (async function(){try{X=await ld('extra');JZ=X.nav.juz;show('home')}catch(e){$('#mn').innerHTML='<div class="note">এই ফাইল চালাতে DecompressionStream সমর্থিত আধুনিক ব্রাউজার দরকার।</div>';console.error(e)}})();
 })();
 </script><script>
-(function(){var dip;function bar(){if(!dip||matchMedia('(display-mode: standalone)').matches||document.getElementById('pwaI'))return;var b=document.createElement('button');b.id='pwaI';b.textContent='📲 অ্যাপ ইনস্টল করুন';b.onclick=function(){dip.prompt();dip.userChoice.then(function(){b.remove();dip=null})};document.body.appendChild(b);setTimeout(function(){b.remove()},25000)}
-addEventListener('beforeinstallprompt',function(e){e.preventDefault();dip=e;bar()});
-addEventListener('appinstalled',function(){var b=document.getElementById('pwaI');if(b)b.remove();warm()});
+(function(){
+var BUILD='5cb376d66a',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var $=function(i){return document.getElementById(i)};
+function card(id,html){var d=document.createElement('div');d.id=id;d.className='qa-card';d.innerHTML=html;document.body.appendChild(d);return d}
+function note(t){var c=card('qaOk','<div style="flex:1"><b>'+t+'</b></div>');setTimeout(function(){c.remove()},3500)}
+/* ---------- আপডেট হওয়ার পর বার্তা ---------- */
+var prev=LS.get('qa_build');LS.set('qa_build',BUILD);if(prev&&prev!==BUILD)addEventListener('load',function(){note('✓ অ্যাপ নতুন সংস্করণে আপডেট হয়েছে')});
+/* ---------- ইনস্টল পপআপ ---------- */
+var dip=null,ua=navigator.userAgent,standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+var ios=/iphone|ipad|ipod/i.test(ua),inapp=/FBAN|FBAV|FB_IAB|Instagram|Messenger|Line\/|; wv\)/i.test(ua);
+function dismissed(){return Date.now()-(+LS.get('qa_inst_x')||0)<7*864e5}
+function showInstall(kind){if(standalone||dismissed()||$('qaInst'))return;
+ var msg=kind==='ios'?'Safari-তে Share (⬆) চেপে "Add to Home Screen" বাছুন':kind==='inapp'?'ইনস্টল করতে লিংকটি Chrome/Safari-তে খুলুন (⋮ → Open in browser)':'হোম স্ক্রিনে রাখুন, অফলাইনেও পড়ুন';
+ var c=card('qaInst','<img src="icons/icon-192.png" alt=""><div style="flex:1"><b>আল কুরআন অ্যাপ ইনস্টল করুন</b><small>'+msg+'</small></div>'+(kind==='prompt'?'<button class="qa-go">ইনস্টল</button>':'')+'<button class="qa-x" aria-label="বন্ধ">×</button>');
+ c.querySelector('.qa-x').onclick=function(){LS.set('qa_inst_x',Date.now());c.remove()};
+ var g=c.querySelector('.qa-go');if(g)g.onclick=function(){dip.prompt();dip.userChoice.then(function(r){c.remove();dip=null;if(r.outcome!=='accepted')LS.set('qa_inst_x',Date.now())})}}
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();dip=e;setTimeout(function(){showInstall('prompt')},1200)});
+addEventListener('appinstalled',function(){var c=$('qaInst');if(c)c.remove();LS.set('qa_inst_x',Date.now()*2);var n=navigator.connection;if(n&&n.type==='wifi'&&!n.saveData)setTimeout(warm,3000)});
+if(!standalone&&!dismissed())setTimeout(function(){if(inapp)showInstall('inapp');else if(ios)showInstall('ios')},2500);
 function warm(){navigator.serviceWorker&&navigator.serviceWorker.ready.then(function(r){r.active&&r.active.postMessage('warm')})}window.warmOffline=warm;
-if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',function(){navigator.serviceWorker.register('sw.js')})})();
+/* ---------- অটো আপডেট ---------- */
+if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',function(){
+ var hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
+ navigator.serviceWorker.addEventListener('controllerchange',function(){if(!hadCtl){hadCtl=true;return}if(reloaded)return;reloaded=true;location.reload()});
+ navigator.serviceWorker.register('sw.js').then(function(reg){
+  function ask(w){if(!navigator.serviceWorker.controller||$('qaUpd'))return;
+   var c=card('qaUpd','<div style="flex:1"><b>🔄 নতুন আপডেট এসেছে</b><small>আপডেট করলে অ্যাপ একবার রিলোড হবে</small></div><button class="qa-go">আপডেট করুন</button><button class="qa-x" aria-label="পরে">×</button>');
+   c.querySelector('.qa-go').onclick=function(){this.textContent='আপডেট হচ্ছে…';w.postMessage('SKIP_WAITING')};c.querySelector('.qa-x').onclick=function(){c.remove()}}
+  if(reg.waiting&&navigator.serviceWorker.controller)reg.waiting.postMessage('SKIP_WAITING');   /* আগের সেশনে নামানো আপডেট: খোলার সাথে সাথেই প্রয়োগ */
+  reg.addEventListener('updatefound',function(){var n=reg.installing;if(n)n.addEventListener('statechange',function(){if(n.state==='installed')ask(n)})});
+  function chk(){reg.update().catch(function(){})}chk();setInterval(chk,30*60*1000);
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')chk()})})});
+})();
 </script>
+
 </body></html>
