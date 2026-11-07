@@ -12,7 +12,7 @@ const safari=/Safari/i.test(ua)&&!/Chrome|CriOS|Edg|EdgiOS|OPR|FxiOS|Firefox|Sam
 const mac=/Macintosh|Mac OS X/i.test(ua)&&!ios;
 const android=/Android/i.test(ua);
 const el=id=>document.getElementById(id);
-function status(id,message){const node=el(id);if(node)node.textContent=message;else if(window.toast)window.toast(message)}
+function status(id,message){const node=el(id);if(node){node.textContent=message;return}const tip=el('tt');if(tip){tip.textContent=message;tip.classList.add('on');clearTimeout(status.dismiss);status.dismiss=setTimeout(()=>tip.classList.remove('on'),2600)}}
 function guidance(){
  if(ios)return 'iPhone/iPad: Safari-র Share বাটন → Add to Home Screen → Add নির্বাচন করুন।';
  if(safari&&mac)return 'Safari: File → Add to Dock নির্বাচন করুন (সমর্থিত macOS সংস্করণে)।';
