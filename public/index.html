@@ -608,7 +608,7 @@ function gotoAy(){var ref=L.rl?reference():[1,1];sheet('নির্দিষ্
 /* Main interactions. */
 $('#hd').onclick=function(e){var b=e.target.closest('[data-a]');if(!b)return;if(b.dataset.a==='menu'){dlH();dr('dl',!L.dl)}else openSearch()};
 $('#bn').onclick=function(e){var b=e.target.closest('[data-t]');if(b)show(b.dataset.t)};
-$('#dl').onclick=function(e){var b=e.target.closest('[data-d]');if(!b)return;dr('dl',0);var k=b.dataset.d;if(k==='jump')gotoAy();else if(k==='search')openSearch();else if(k==='set')openSet();else if(k==='language')location.assign('languages.html');else if(k==='xb')openXB();else if(k==='tajweed')tajweedSheet();else if(k==='audit')auditSheet();else if(k==='backup')exportBackup();else if(k==='restore')importBackup();else if(k==='learning')location.assign('learn.html');else if(k==='installApp')location.assign('install.html');else if(k==='shareApp'){if(window.QuranPWA&&window.QuranPWA.shareApp)window.QuranPWA.shareApp();else location.assign('install.html')}};
+$('#dl').onclick=function(e){var b=e.target.closest('[data-d]');if(!b)return;dr('dl',0);var k=b.dataset.d;if(k==='jump')gotoAy();else if(k==='search')openSearch();else if(k==='set')openSet();else if(k==='language')location.assign('languages.html');else if(k==='xb')openXB();else if(k==='tajweed')tajweedSheet();else if(k==='audit')auditSheet();else if(k==='backup')exportBackup();else if(k==='restore')importBackup();else if(k==='learning')location.assign('https://quran-learning-neon.vercel.app/index.html');else if(k==='installApp')location.assign('install.html');else if(k==='shareApp'){if(window.QuranPWA&&window.QuranPWA.shareApp)window.QuranPWA.shareApp();else location.assign('install.html')}};
 $('#mn').onclick=function(e){var b=e.target.closest('[data-s],[data-h],[data-vw],[data-topic],[data-l],[data-folder],[data-newfolder],[data-libedit],[data-plannew],[data-plandelete],[data-session],[data-backup],[data-restore]');if(!b)return;if(b.dataset.s)openR(+b.dataset.s,+b.dataset.ay||1);else if(b.dataset.h){ht=b.dataset.h;show('home')}else if(b.dataset.vw){var ix=+b.dataset.idx,p=X.nav[b.dataset.vw][ix];openR(p[0],p[1],b.dataset.vw,ix)}else if(b.dataset.topic)openTopic(+b.dataset.topic);else if(b.dataset.l){lt=b.dataset.l;show('lib')}else if(b.hasAttribute('data-folder')){folderFilter=b.dataset.folder;show('lib')}else if(b.hasAttribute('data-newfolder'))newFolder();else if(b.dataset.libedit){var p=b.dataset.libedit.split(':').map(Number);if(lt==='note')editNote(p[0],p[1]);else chooseFolder(p[0],p[1])}else if(b.hasAttribute('data-plannew'))createPlan();else if(b.hasAttribute('data-plandelete')){S.plan=0;save();show('plan')}else if(b.dataset.session){var p=S.plan,n=p.start+Math.floor((p.end-p.start+1)*(+b.dataset.session)/p.days),ref=fromIndex(n);openR(ref[0],ref[1])}else if(b.hasAttribute('data-backup'))exportBackup();else if(b.hasAttribute('data-restore'))importBackup()};
 $('#mn').oninput=function(e){var t=e.target;if(t.id==='lq'){lq=t.value;var pos=t.selectionStart;$('#mn').innerHTML=libH();$('#lq').focus();$('#lq').setSelectionRange(pos,pos)}else if(t.id==='indexq'){var n=num(t.value);document.querySelectorAll('.sectionrow').forEach(function(b){b.hidden=!!t.value&&+b.dataset.idx+1!==n})}else if(t.id==='topicq'){var q=norm(t.value);var html=X.topics.filter(function(x){return q?norm(x[1]+' '+x[2]).includes(q):!x[5]}).map(topicRow).join('');$('#mn').querySelectorAll('.topicrow').forEach(function(x){x.remove()});$('#mn').insertAdjacentHTML('beforeend',html)}};
 $('#mn').onchange=function(e){var b=e.target;if(b.hasAttribute('data-sessiondone')&&S.plan){var n=+b.dataset.sessiondone,ix=S.plan.done.indexOf(n);if(b.checked&&ix<0)S.plan.done.push(n);else if(!b.checked&&ix>=0)S.plan.done.splice(ix,1);save();show('plan')}};
@@ -658,7 +658,7 @@ async function qaTafsirPage(s,a){
   var h='<div class="sheethead"><h3>তাফসির · আয়াত '+bn(a)+'</h3><button class="ib" data-cl aria-label="ফিরে যান">'+I(P.x)+'</button></div><div class="tfp">';
   h+='<div class="tfp-nav"><button data-tfp="prev"'+(index===1?' disabled':'')+'>‹ আগের আয়াত</button><span>'+esc(M[s-1][1])+' · '+bn(a)+' / '+bn(M[s-1][2])+'</span><button data-tfp="next"'+(index===6236?' disabled':'')+'>পরের আয়াত ›</button></div>';
   h+='<section class="tfp-verse"><small>'+qaPlace(s)+' সূরা · '+esc(QA_EN[s-1]||'')+'</small><h2>'+esc(M[s-1][1])+' · আয়াত '+bn(a)+'</h2>'+wbw(y)+trans+'</section>';
-  h+='<div class="tfp-tools"><button data-tfp="play">'+I(P.play)+' শুনুন</button><button data-tfp="pin" class="'+(pin?'on':'')+'">'+I(P.bm)+' বুকমার্ক</button><button data-tfp="copy">'+I(P.copy)+' কপি</button><button data-tfp="share">'+I(P.share)+' শেয়ার</button><button data-tfp="goto">'+I(P.book)+' সূরায়</button><button data-tfp="learn">'+I(P.cap)+' শব্দব্যাকরণ</button></div>';
+  h+='<div class="tfp-tools"><button data-tfp="play">'+I(P.play)+' শুনুন</button><button data-tfp="pin" class="'+(pin?'on':'')+'">'+I(P.bm)+' বুকমার্ক</button><button data-tfp="copy">'+I(P.copy)+' কপি</button><button data-tfp="share">'+I(P.share)+' শেয়ার</button><button data-tfp="goto">'+I(P.book)+' সূরায়</button></div>';
   h+='<details class="tfp-section" open><summary>আয়াতের বিষয়সমূহ'+(related.length?' · '+bn(related.length):'')+'</summary><div class="tfp-body">'+(related.length?'<div class="tfp-tags">'+related.map(function(o){return '<button data-tfp-topic="'+attr(o[0])+'">'+esc(o[1])+'</button>'}).join('')+'</div>':'<p class="tfp-empty">এই আয়াতে আলাদা বিষয় ট্যাগ পাওয়া যায়নি।</p>')+'</div></details>';
   h+=sections||'<div class="tfp-section"><div class="tfp-body"><p class="tfp-empty">এই আয়াতে আলাদা তাফসির পাওয়া যায়নি।</p></div></div>';
   h+='<details class="tfp-section"><summary>আমার নোট</summary><div class="tfp-body"><textarea id="qa-tafsir-note" rows="5" placeholder="এই আয়াত সম্পর্কে আপনার নোট লিখুন">'+esc(S.notes[key]||'')+'</textarea><button class="btn" data-tfp="save">নোট সংরক্ষণ</button></div></details>';
@@ -678,7 +678,7 @@ async function qaTafsirPage(s,a){
    else if(op==='save'){var note=$('#qa-tafsir-note').value.trim();if(note)S.notes[key]=note;else delete S.notes[key];save();toast('নোট সংরক্ষিত হয়েছে')}
    else if(op==='goto'){closeAll();openR(s,a)}
    else if(op==='intro')intro(s);
-   else if(op==='learn')location.assign('learn.html?tab=words&s='+s+'&a='+a);
+   
   };
   $('#sh').querySelector('[data-cl]').focus({preventScroll:true});
  }catch(err){
@@ -701,7 +701,6 @@ verseMenu=function(s,a){
   ['folder',P.lib,'বুকমার্ক ফোল্ডার','পছন্দের ফোল্ডারে সংরক্ষণ'],
   ['note',P.note,'নিজের নোট','আয়াতের ব্যক্তিগত নোট'],
   ['intro',P.book,'সূরা পরিচিতি','পটভূমি ও ভূমিকা'],
-  ['learn',P.cap,'শব্দের পূর্ণ ব্যাকরণ','মূল Greentech বাংলা, Root, Sarf ও Iʿrab'],
   ['goto',P.jump,'মূল রিডারে দেখুন','আয়াতটি সূরায় খুলুন']
  ];
  sheet(esc(M[s-1][1])+' · আয়াত '+bn(a),ops.map(function(o){return '<button class="op verse-op" data-vmenu="'+o[0]+'"><span class="menuicon">'+I(o[1])+'</span><span class="menutext">'+o[2]+'<small>'+o[3]+'</small></span></button>'}).join(''),async function(e){
@@ -714,7 +713,7 @@ verseMenu=function(s,a){
   else if(op==='pin'){togglePin(s,a);closeAll()}
   else if(op==='folder')chooseFolder(s,a);
   else if(op==='note')editNote(s,a);
-  else if(op==='learn')location.assign('learn.html?tab=words&s='+s+'&a='+a);
+  
   else if(op==='intro')intro(s);
   else if(op==='goto'){closeAll();openR(s,a)}
  });
@@ -751,7 +750,7 @@ apply();
 })();
 </script><script>
 (function(){
-var BUILD='tfq-v7.4-languages-20261107',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var BUILD='tfq-v7.5-external-learning-20261107',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 var $=function(i){return document.getElementById(i)};
 function card(id,html){var d=document.createElement('div');d.id=id;d.className='qa-card';d.innerHTML=html;document.body.appendChild(d);return d}
 function note(t){var c=card('qaOk','<div style="flex:1"><b>'+t+'</b></div>');setTimeout(function(){c.remove()},3500)}
