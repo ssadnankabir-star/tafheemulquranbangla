@@ -152,6 +152,33 @@ html[data-theme=dark] .surah-hero{background:#29261f;color:#e2c18a;border-color:
 .surah-hero .sura-text{flex:1;min-width:0}.surah-hero .sura-kicker{font-size:13px;opacity:.9}.surah-hero h2{font:700 27px/1.5 var(--body);margin:3px 0 0}.surah-hero .sura-en{font:15px/1.5 Arial,sans-serif;margin-top:2px}.surah-hero .sura-ar{font:28px/1.75 var(--ar)}.surah-hero .sura-meta{font-size:13px;opacity:.8}
 .surah-intro{flex:none;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid currentColor;border-radius:13px;padding:9px 7px;font-size:12px;line-height:1.3;min-width:77px}.surah-intro svg{width:22px;height:22px}
 @media(max-width:520px){.surah-hero{margin:12px 10px 17px;padding:13px 11px;gap:9px}.surah-hero-symbol{width:53px;height:62px;border-radius:14px}.surah-hero-symbol svg{width:41px;height:41px}.surah-hero h2{font-size:22px}.surah-intro{min-width:65px;font-size:11px;padding:7px 4px}.surah-row .a{font-size:23px}.surah-symbol{width:31px;height:31px}.surah-symbol svg{width:23px;height:23px}}
+
+
+/* Exact GreenTech Quran icons: small black emblems in surah index */
+.surah-row{gap:15px;align-items:center}
+.surah-row .surah-number{flex:none;width:27px;font:500 17px/1.4 var(--body);color:var(--tx)}
+.surah-row .m b{font-size:19px;font-weight:500;color:var(--g)}
+.surah-row .surah-detail{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:3px;font:14px/1.5 var(--body);color:var(--mu)}
+.surah-row .surah-detail [lang=en]{font-family:Arial,sans-serif}
+.surah-row .surah-detail img{display:inline-block;flex:none;width:16px;height:16px;object-fit:contain;margin-left:2px}
+html[data-theme=dark] .surah-row .surah-detail img{filter:invert(1)}
+.surah-row .a{font-size:27px;max-width:32%;flex:none}
+/* Original large coloured illustrations inside the surah */
+.surah-hero,.surah-hero.madani,html[data-theme=dark] .surah-hero,html[data-theme=dark] .surah-hero.madani{max-width:1050px;margin:0 auto 15px;padding:24px 20px 16px;min-height:130px;display:flex;align-items:center;gap:18px;background:var(--bg);border:0;border-radius:0;box-shadow:none;color:var(--tx);position:relative}
+.surah-hero-symbol{width:132px;height:102px;flex:none;display:block;background:transparent;border-radius:14px;overflow:hidden}
+.surah-hero-symbol img{display:block;width:100%;height:100%;object-fit:contain}
+.surah-hero .sura-text{padding-top:18px;flex:1;min-width:0}
+.surah-hero h2{font:600 27px/1.5 var(--body);color:var(--tx);margin:2px 0}
+.surah-hero .sura-en{font:16px/1.5 Arial,sans-serif;color:var(--mu)}
+.surah-hero .sura-ar{display:none}
+.surah-hero .sura-kicker{font-size:13px;color:var(--mu)}
+.surah-hero .sura-meta{font-size:15px;color:var(--mu);margin-top:2px;opacity:1}
+.surah-intro{position:absolute;right:15px;top:8px;display:flex;flex-direction:row;align-items:center;gap:4px;min-width:0;border:0;border-radius:9px;padding:6px 8px;color:var(--g);background:transparent;font-size:13px;font-weight:600}
+.surah-intro span{white-space:nowrap}.surah-intro span br{display:none}.surah-intro svg{display:none}
+.surah-intro:hover,.surah-intro:focus-visible{background:var(--lt)}
+@media(max-width:520px){.surah-row{gap:11px}.surah-row .surah-number{width:24px;font-size:15px}.surah-row .surah-detail{font-size:12px;gap:4px}.surah-row .surah-detail img{width:15px;height:15px;margin-left:1px}.surah-row .a{font-size:25px;max-width:31%}.surah-hero,.surah-hero.madani,html[data-theme=dark] .surah-hero,html[data-theme=dark] .surah-hero.madani{padding:34px 12px 13px;gap:11px;min-height:141px}.surah-hero-symbol{width:108px;height:85px;border-radius:12px}.surah-hero .sura-text{padding-top:0}.surah-hero h2{font-size:22px;line-height:1.35}.surah-hero .sura-en{font-size:14px}.surah-hero .sura-meta{font-size:12px}.surah-intro{right:10px;top:4px;font-size:12px;padding:6px 8px}}
+@media(max-width:355px){.surah-hero-symbol{width:90px;height:72px}.surah-row .a{max-width:29%;font-size:21px}}
+
 </style></head>
 <body>
 <div id="app"><div class="hd" id="hd"></div><div id="mn"></div><div id="ab"></div><nav id="bn"></nav></div>
@@ -597,12 +624,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){backAction(
 /* v5 surah metadata and identity. 28 Madani per classical Mushaf al-Madinah index. */
 var QA_MADANI=new Set([2,3,4,5,8,9,13,22,24,33,47,48,49,55,57,58,59,60,61,62,63,64,65,66,76,98,99,110]);
 var QA_EN='Al-Fatihah|Al-Baqarah|Ali Imran|An-Nisa|Al-Maidah|Al-Anam|Al-Araf|Al-Anfal|At-Tawbah|Yunus|Hud|Yusuf|Ar-Rad|Ibrahim|Al-Hijr|An-Nahl|Al-Isra|Al-Kahf|Maryam|Ta-Ha|Al-Anbiya|Al-Hajj|Al-Muminun|An-Nur|Al-Furqan|Ash-Shuara|An-Naml|Al-Qasas|Al-Ankabut|Ar-Rum|Luqman|As-Sajdah|Al-Ahzab|Saba|Fatir|Ya-Sin|As-Saffat|Sad|Az-Zumar|Ghafir|Fussilat|Ash-Shura|Az-Zukhruf|Ad-Dukhan|Al-Jathiyah|Al-Ahqaf|Muhammad|Al-Fath|Al-Hujurat|Qaf|Adh-Dhariyat|At-Tur|An-Najm|Al-Qamar|Ar-Rahman|Al-Waqiah|Al-Hadid|Al-Mujadilah|Al-Hashr|Al-Mumtahanah|As-Saff|Al-Jumuah|Al-Munafiqun|At-Taghabun|At-Talaq|At-Tahrim|Al-Mulk|Al-Qalam|Al-Haqqah|Al-Maarij|Nuh|Al-Jinn|Al-Muzzammil|Al-Muddaththir|Al-Qiyamah|Al-Insan|Al-Mursalat|An-Naba|An-Naziat|Abasa|At-Takwir|Al-Infitar|Al-Mutaffifin|Al-Inshiqaq|Al-Buruj|At-Tariq|Al-Ala|Al-Ghashiyah|Al-Fajr|Al-Balad|Ash-Shams|Al-Layl|Ad-Duha|Ash-Sharh|At-Tin|Al-Alaq|Al-Qadr|Al-Bayyinah|Az-Zalzalah|Al-Adiyat|Al-Qariah|At-Takathur|Al-Asr|Al-Humazah|Al-Fil|Quraysh|Al-Maun|Al-Kawthar|Al-Kafirun|An-Nasr|Al-Masad|Al-Ikhlas|Al-Falaq|An-Nas'.split('|');
-var QA_KAABA='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" opacity=".14" d="M8 16 23 9l17 8v21L25 45 8 37Z"/><path fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round" d="M8 16 23 9l17 8v21L25 45 8 37Z M8 16l17 8 15-7M25 24v21M8 24l17 8 15-7"/><path fill="currentColor" d="m8 22 17 8 15-7v5l-15 7-17-8Z"/></svg>';
-var QA_MOSQUE='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 42h38M8 42V20h7v22M10 20v-8h3v8m-2-8V7m-3 20h7M33 42V20h7v22M35 20v-8h3v8m-2-8V7m-3 20h7M18 42V29c0-8 12-8 12 0v13M18 29c0-11 12-11 12 0M24 15v-5"/><path fill="currentColor" opacity=".18" d="M18 29c0-9 12-9 12 0v13H18Z"/></svg>';
 function qaPlace(s){return QA_MADANI.has(s)?'মাদানি':'মাক্কি'}
-function qaIcon(s){return QA_MADANI.has(s)?QA_MOSQUE:QA_KAABA}
-function qaSurahHero(s,a){var m=M[s-1],mad=QA_MADANI.has(s);return '<section class="surah-hero '+(mad?'madani':'makki')+'"><div class="surah-hero-symbol">'+qaIcon(s)+'</div><div class="sura-text"><div class="sura-kicker">'+bn(s)+' · '+qaPlace(s)+' সূরা</div><h2>'+esc(m[1])+'</h2><div class="sura-en" lang="en">'+esc(QA_EN[s-1]||'')+'</div><div class="sura-ar" lang="ar" dir="rtl">'+m[3]+'</div><div class="sura-meta">'+bn(m[2])+' আয়াত · পারা '+bn(juz(s,a))+'</div></div><button class="surah-intro" data-r="intro" aria-label="সূরা পরিচিতি">'+I(P.book)+'<span>সূরা<br>পরিচিতি</span></button></section>'}
-srow=function(m){var s=m[0],mad=QA_MADANI.has(s);return '<button class="row surah-row '+(mad?'madani':'makki')+'" data-s="'+s+'"><span class="surah-number">'+bn(s)+'</span><span class="surah-symbol">'+qaIcon(s)+'</span><span class="m"><b>'+esc(m[1])+'</b><small>'+qaPlace(s)+' · '+bn(m[2])+' আয়াত</small><span class="sura-en" lang="en">'+esc(QA_EN[s-1]||'')+'</span></span><span class="a" lang="ar">'+m[3]+'</span></button>'};
+function qaIcon(s,illustration){var madani=QA_MADANI.has(s);return '<img src="icons/greentech-'+(madani?'madani':'makki')+(illustration?'-illustration':'')+'.svg" alt="'+(illustration?'':(madani?'মাদানি সূরা':'মাক্কি সূরা'))+'" loading="lazy" decoding="async">'}
+function qaSurahHero(s,a){var m=M[s-1],mad=QA_MADANI.has(s);return '<section class="surah-hero '+(mad?'madani':'makki')+'"><div class="surah-hero-symbol">'+qaIcon(s,true)+'</div><div class="sura-text"><div class="sura-kicker">'+bn(s)+' · '+qaPlace(s)+' সূরা</div><h2>'+esc(m[1])+'</h2><div class="sura-en" lang="en">'+esc(QA_EN[s-1]||'')+'</div><div class="sura-ar" lang="ar" dir="rtl">'+m[3]+'</div><div class="sura-meta">'+bn(m[2])+' আয়াত · পারা '+bn(juz(s,a))+'</div></div><button class="surah-intro" data-r="intro" aria-label="সূরা পরিচিতি">'+I(P.book)+'<span>সূরা<br>পরিচিতি</span></button></section>'}
+srow=function(m){var s=m[0],mad=QA_MADANI.has(s);return '<button class="row surah-row '+(mad?'madani':'makki')+'" data-s="'+s+'"><span class="surah-number">'+bn(s)+'</span><span class="m"><b>'+esc(m[1])+'</b><small class="surah-detail"><span lang="en">'+esc(QA_EN[s-1]||'')+'</span><span class="surah-ayat-count">· '+bn(m[2])+' আয়াত</span>'+qaIcon(s,false)+'</small></span><span class="a" lang="ar">'+m[3]+'</span></button>'};
 
 
 /* Tafsir is the single-verse destination; inline tafsir remains available through Settings. */
@@ -723,7 +748,7 @@ apply();
 })();
 </script><script>
 (function(){
-var BUILD='tfq-v5-20261107',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var BUILD='tfq-v5-green-assets-20261107',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 var $=function(i){return document.getElementById(i)};
 function card(id,html){var d=document.createElement('div');d.id=id;d.className='qa-card';d.innerHTML=html;document.body.appendChild(d);return d}
 function note(t){var c=card('qaOk','<div style="flex:1"><b>'+t+'</b></div>');setTimeout(function(){c.remove()},3500)}
