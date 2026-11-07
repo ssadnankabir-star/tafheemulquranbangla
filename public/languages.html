@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4f9157">
+<meta name="description" content="তাফহীমুল কুরআনের ভাষা ও অনুবাদ সেটিংস: GreenTech Quran-এর ৬৬টি ভাষা, ১৬২টি অনুবাদ ও তাফসির এবং ১৫টি শব্দার্থ ভাষা।">
+<title>ভাষা ও অনুবাদ | তাফহীমুল কুরআন বাংলা</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.png">
+<link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
+<style>
+@font-face{font-family:Kalpurush;src:url("fonts/kalpurush.d9906765.ttf") format("truetype");font-display:swap}
+:root{--green:#397e4e;--green2:#4f9157;--text:#1d3427;--muted:#657269;--border:#dce7df;--bg:#f6f9f5;--card:#fff;--soft:#e8f4eb;--warn:#7b5925}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Kalpurush,system-ui,"Noto Sans Bengali",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}a{color:var(--green)}
+.hgi{font-size:21px;line-height:1;vertical-align:middle}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #83c896;outline-offset:3px}
+.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px max(16px,calc((100vw - 1050px)/2));background:var(--green2);color:#fff;box-shadow:0 2px 16px #24442b1c}
+.back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:700}
+.brand{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700}.brand img{width:31px;height:31px;border-radius:9px}
+.top .help{font-size:13px;color:#fff;text-decoration:none;border:1px solid #ffffff7a;border-radius:9px;padding:4px 9px}
+.wrap{max-width:1050px;margin:auto;padding:30px 18px 45px}
+.hero{display:flex;gap:20px;align-items:flex-start;justify-content:space-between}
+.eyebrow{font:700 11px/1.4 system-ui,sans-serif;letter-spacing:.12em;color:var(--green)}
+h1{font-size:clamp(29px,4vw,42px);line-height:1.28;margin:7px 0 9px}
+.hero p{max-width:660px;color:var(--muted);margin:0}
+.hero-icon{flex:none;width:78px;height:78px;display:grid;place-items:center;background:var(--soft);color:var(--green);border-radius:23px;font-size:43px}
+.hero-icon .hgi{font-size:40px}
+.stats{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+.stat{background:#fff;border:1px solid var(--border);border-radius:14px;padding:10px 15px;color:var(--muted);font-size:13px}
+.stat strong{color:var(--green);font:700 20px/1.2 system-ui,sans-serif;display:block;margin-bottom:3px}
+.status{background:#ecf7ef;color:#235f3b;border:1px solid #c6e7ce;border-radius:14px;padding:11px 14px;font-size:14px;margin-bottom:16px}
+.status.warn{background:#fffaee;border-color:#f0e4c7;color:var(--warn)}
+.tabs{display:flex;gap:7px;padding:6px;background:#edf3ef;border:1px solid var(--border);border-radius:16px;margin:20px 0 19px;overflow:auto}
+.tabs button{border:0;background:transparent;color:#576b5e;border-radius:11px;padding:11px 15px;white-space:nowrap;display:flex;align-items:center;gap:7px;font-weight:700}
+.tabs button.active{background:#fff;color:var(--green);box-shadow:0 2px 13px #20452b17}
+.section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px}
+.section h2{font-size:23px;line-height:1.35;margin:0 0 5px}.section p{color:var(--muted);margin:5px 0 12px}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:16px 0 10px}
+.filters label{display:flex;flex-direction:column;font-weight:700;font-size:13px;color:#526a59;gap:5px}
+.filters select,.searchbox input{width:100%;min-width:0;border:1px solid #cbded1;border-radius:11px;padding:11px 12px;background:#fff;color:var(--text);min-height:45px}
+.searchbox{position:relative;margin:12px 0}.searchbox .hgi{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#69816f;font-size:18px}.searchbox input{padding-left:40px}
+.quick{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 16px}.quick button{background:#edf5ed;color:var(--green);border:1px solid #c8e4cd;border-radius:20px;padding:5px 12px;font-size:13px}.quick button.active{background:var(--green);color:#fff}
+.meta{font-size:13px;color:var(--muted);margin:14px 0 10px}
+.list{display:grid;gap:9px}
+.item{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--border);padding:13px 14px;border-radius:14px;min-width:0}
+.item .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;flex:none;background:var(--soft);color:var(--green)}
+.item .icon .hgi{font-size:23px}
+.item .copy{flex:1;min-width:0}
+.item h3{font-size:16px;line-height:1.43;margin:0;font-weight:700;overflow-wrap:anywhere}
+.item small{display:block;font-size:12px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
+.right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.flag{font-size:11px;color:#536b5b;background:#edf5ef;padding:2px 8px;border-radius:9px}
+.flag.missing{background:#fff3df;color:#8a692d}
+.choose{border:1px solid var(--green);background:var(--green);color:#fff;border-radius:9px;padding:7px 11px;font-size:12px;font-weight:700;white-space:nowrap}
+.choose.active{background:#e3f3e6;color:var(--green)}
+.choose:disabled{border-color:#dfe3df;background:#edf0ed;color:#738078;cursor:not-allowed}
+.group{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.option{border:1px solid var(--border);background:#fff;border-radius:14px;padding:14px;text-align:left;display:flex;gap:11px;align-items:center;min-height:74px;color:var(--text)}
+.option .name{flex:1;font-weight:700}.option small{display:block;color:var(--muted);font-size:12px;font-weight:400}.option .hgi{font-size:23px;color:var(--green)}
+.option.active{border-color:var(--green);background:var(--soft)}.option[disabled]{opacity:.64;cursor:not-allowed}
+.notice{padding:13px 15px;border-radius:13px;border:1px solid #ecddb9;background:#fffcf3;color:#69552e;font-size:13px;margin:16px 0 0}
+.sources{padding-top:19px;border-top:1px solid var(--border);margin-top:22px;color:var(--muted);font-size:12px}
+.empty{border:1px dashed var(--border);border-radius:14px;padding:27px 16px;color:var(--muted);text-align:center}
+.interface-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.interface-grid div{border:1px solid var(--border);border-radius:12px;padding:13px;background:#f9fbf9}
+.interface-grid div small{display:block;color:var(--muted);font-size:12px}
+.bottom{margin-top:24px;display:flex;justify-content:space-between;gap:14px;align-items:center;color:var(--muted);font-size:13px}
+.bottom a{font-weight:700}
+@media(max-width:620px){.top{padding:10px 13px}.top .help{display:none}.brand{font-size:13px}.wrap{padding:22px 12px 38px}.hero-icon{width:56px;height:56px;border-radius:17px}.hero-icon .hgi{font-size:30px}.stats{gap:6px}.stat{flex:1;min-width:95px;padding:10px}.section{padding:14px;border-radius:16px}.filters{grid-template-columns:1fr}.group,.interface-grid{grid-template-columns:1fr}.right{align-items:flex-end}.item{gap:9px;padding:11px}.item .icon{width:32px;height:32px}.item h3{font-size:14px}.choose{padding:7px 8px}.bottom{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+<a class="back" href="index.html"><i class="hgi hgi-stroke hgi-arrow-left-01" aria-hidden="true"></i> রিডারে ফিরুন</a>
+<div class="brand"><img src="icons/icon-192.png" alt=""><span>তাফহীমুল কুরআন</span></div>
+<a class="help" href="https://github.com/arowabd-stack/greentech-quran-apk-/blob/main/assets/data.json" target="_blank" rel="noopener noreferrer">উৎস তালিকা</a>
+</header>
+<main class="wrap">
+<div class="hero">
+<div><span class="eyebrow">LANGUAGE & CONTENT SETTINGS</span><h1>ভাষা ও অনুবাদ</h1><p>GreenTech Quran-এর ভাষা, অনুবাদ ও তাফসিরের মূল ক্যাটালগ। অ্যাপে থাকা অনুবাদ বা তাফসির বেছে নিতে পারবেন; অন্যগুলোর জন্য আলাদা ডেটাবেস প্রয়োজন।</p></div>
+<div class="hero-icon"><i class="hgi hgi-stroke hgi-language-circle" aria-hidden="true"></i></div>
+</div>
+<div class="stats"><div class="stat"><strong id="statLang">৬৬</strong> অনুবাদের ভাষা</div><div class="stat"><strong id="statEdition">১৬২</strong> অনুবাদ ও তাফসির</div><div class="stat"><strong id="statWord">১৫</strong> শব্দার্থ ভাষা</div></div>
+<div id="notice" class="status" role="status" aria-live="polite">ভাষার তালিকা লোড হচ্ছে…</div>
+<div class="tabs" role="tablist" aria-label="ভাষা বিভাগ">
+<button class="active" type="button" data-tab="editions" role="tab" aria-selected="true"><i class="hgi hgi-stroke hgi-translation" aria-hidden="true"></i> অনুবাদ ও তাফসির</button>
+<button type="button" data-tab="words" role="tab" aria-selected="false">শব্দে শব্দে</button>
+<button type="button" data-tab="interface" role="tab" aria-selected="false"><i class="hgi hgi-stroke hgi-globe" aria-hidden="true"></i> অ্যাপের ভাষা</button>
+</div>
+<section id="panel" class="section" aria-live="polite"></section>
+<div class="bottom"><span>উৎস: GreenTech Quran-এর প্রকাশিত ভাষা তালিকা। এই পেজে কোনো নতুন তাফসির বা অনুবাদের লেখা বানানো হয়নি।</span><a href="index.html">কুরআন রিডারে ফিরে যান</a></div>
+</main>
+<script>
+(()=>{
+"use strict";
+const $=s=>document.querySelector(s);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const bn=v=>String(v).replace(/\d/g,c=>"০১২৩৪৫৬৭৮৯"[c]);
+const installedEd={
+ "en_sahih":{kind:"tr",key:"en"},
+ "bn_mkhan":{kind:"tr",key:"m"},
+ "bn_bayaan":{kind:"tr",key:"b"},
+ "bn_tafsirbayaan":{kind:"tf",key:"b"},
+ "bn_tafsirzakaria":{kind:"tf",key:"z"},
+ "bn_fmazid":{kind:"tf",key:"f"},
+ "bn_tafsir_kathir":{kind:"tf",key:"k"}
+};
+const names={bn:"বাংলা · Bangla",en:"English",ur:"اردو · Urdu",ar:"العربية · Arabic",in:"Bahasa Indonesia",id:"Bahasa Indonesia",fr:"Français · French",de:"Deutsch · German",ru:"Русский · Russian",tr:"Türkçe · Turkish",hi:"हिन्दी · Hindi",zh:"中文 · Chinese",fa:"فارسی · Persian",ta:"தமிழ் · Tamil",ml:"മലയാളം · Malayalam",ms:"Bahasa Melayu",dari:"دری · Dari",inh:"Ingush",mrw:"Marwari",["N’ko"]:"ߒߞߏ · N’Ko",en_trans:"English Transliteration"};
+const uiLabels=[["bn","বাংলা"],["en","English"],["ar","العربية"],["de","Deutsch"],["fr","Français"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["ru","Русский"],["es","Español"]];
+let catalog=null,state={tab:"editions",lang:"all",kind:"all",query:""};
+function loadSettings(){try{return JSON.parse(localStorage.getItem("qa_s")||"{}")}catch(e){return {}}}
+function saveSettings(edit){let s=loadSettings();s.c=s.c&&typeof s.c==="object"?s.c:{};edit(s);try{localStorage.setItem("qa_s",JSON.stringify(s));return true}catch(e){note("ব্রাউজারে সেটিংস সংরক্ষণ করা যায়নি।",true);return false}}
+function statusActive(){let s=loadSettings();return '<div class="notice"><strong>বর্তমান পাঠ:</strong> অনুবাদ '+(s.trs?.includes("en")?"English - Sahih International":s.trs?.includes("m")?"বাংলা - Muhiuddin Khan":s.trs?.includes("b")?"বাংলা - Bayaan Foundation":"বাংলা - তাফহীমুল কুরআন")+' · শব্দার্থ '+({bn:"বাংলা",en:"English",both:"বাংলা + English"}[s.wl]||"English")+'।</div>'}
+function note(s,warning=false){let node=$("#notice");node.textContent=s;node.className="status"+(warning?" warn":"")}
+function label(code){if(names[code])return names[code];try{let out=new Intl.DisplayNames(["en"],{type:"language"}).of(code);if(out&&out!==code)return out}catch(e){}let e=catalog?.translations.find(x=>x.language===code)?.name||"";return e.split(" - ")[0]||code}
+function englishLower(s){return String(s).toLocaleLowerCase("en")}
+function sortedLanguages(){return [...new Set(catalog.translations.map(x=>x.language))].sort((a,b)=>label(a).localeCompare(label(b),"en"))}
+function editionAvailability(e){return installedEd[e.fileName]||null}
+function editionText(e){return (e.name||"")+" "+(e.translator||"")+" "+(e.fileName||"")+" "+(e.language||"")}
+function chooseEdition(file){
+ const ed=catalog.translations.find(x=>x.fileName===file),data=ed&&editionAvailability(ed);if(!ed||!data)return note("এই সংস্করণের আসল .db ডেটা এখনো অ্যাপে যুক্ত হয়নি। ডেটা ছাড়া অনুবাদ দেখানো হচ্ছে না।",true);
+ const ok=saveSettings(s=>{if(data.kind==="tr"){s.trs=[data.key];s.c.tr=1;}else s.tfs=[data.key]});
+ if(ok){note("সংরক্ষিত: "+ed.name+"। মূল রিডারে ফিরলে এই উপলব্ধ উৎসটি ব্যবহার হবে।");renderEntries()}
+}
+function buildEditionControls(){
+ const opts=sortedLanguages().map(code=>'<option value="'+esc(code)+'"'+(state.lang===code?' selected':'')+'>'+esc(label(code))+'</option>').join("");
+ return '<h2>অনুবাদ ও তাফসিরের উৎস</h2><p>GreenTech-এর তালিকায় থাকা সব ১৬২টি সংস্করণ এখানে আছে। সব সংস্করণের DB এই ওয়েব অ্যাপে নেই।</p>'+statusActive()+'<div class="filters"><label>ভাষা<select id="languageSelect"><option value="all">সব ভাষা (৬৬)</option>'+opts+'</select></label><label>ধরন<select id="kindSelect"><option value="all">অনুবাদ ও তাফসির</option><option value="tr">শুধু অনুবাদ</option><option value="tf">শুধু তাফসির</option></select></label></div><div class="quick"><button data-lang="all" class="'+(state.lang==="all"?"active":"")+'">সব</button>'+["bn","en","ur","ar"].map(code=>'<button data-lang="'+code+'" class="'+(state.lang===code?"active":"")+'">'+esc(label(code))+'</button>').join("")+'</div><div class="searchbox"><i class="hgi hgi-stroke hgi-search-01" aria-hidden="true"></i><input id="editionSearch" type="search" value="'+esc(state.query)+'" placeholder="ভাষা, অনুবাদক, তাফসির বা ফাইলের নাম খুঁজুন" aria-label="অনুবাদের তালিকা খুঁজুন"></div><div id="editionCount" class="meta"></div><div id="editionList" class="list"></div><div class="notice">নতুন ভাষা বা তাফসির নির্বাচন করলে ভুলভাবে বাংলা বা ইংরেজি লেখা দেখানো হবে না। যেগুলোর DB ইনস্টল নেই, সেগুলো তালিকায় দেখা যাবে কিন্তু চালু করা যাবে না।</div>'
+}
+function renderEntries(){
+ if(state.tab!=="editions"||!catalog)return;
+ const q=englishLower(state.query).trim();
+ const items=catalog.translations.filter(x=>(state.lang==="all"||x.language===state.lang)&&(state.kind==="all"||((x.downloadType===1)?"tf":"tr")===state.kind)&&(!q||englishLower(editionText(x)+" "+label(x.language)).includes(q)));
+ $("#editionCount").textContent="মোট "+bn(items.length)+"টি সংস্করণ · "+bn(items.filter(x=>editionAvailability(x)).length)+"টি এখন ব্যবহারযোগ্য";
+ let s=loadSettings();
+ $("#editionList").innerHTML=items.map(x=>{
+ const a=editionAvailability(x),taf=x.downloadType===1,active=a&&(a.kind==="tr"?s.trs?.includes(a.key):s.tfs?.includes(a.key));
+ return '<article class="item"><div class="icon"><i class="hgi hgi-stroke '+(taf?'hgi-book-open-01':'hgi-translation')+'" aria-hidden="true"></i></div><div class="copy"><h3>'+esc(x.name)+'</h3><small>'+esc(label(x.language))+' · '+(taf?'তাফসির':'অনুবাদ')+' · '+esc(x.translator||"")+'</small><small>Source: '+esc(x.fileName)+'</small></div><div class="right"><span class="flag '+(a?"":"missing")+'">'+(a?"অ্যাপে আছে":"DB নেই")+'</span><button type="button" class="choose'+(active?" active":"")+'" data-edition="'+esc(x.fileName)+'"'+(a?"":" disabled")+'>'+(active?"নির্বাচিত":a?"ব্যবহার করুন":"ইনস্টল নেই")+'</button></div></article>'
+ }).join("")||'<div class="empty">এই খোঁজে কোনো ভাষা বা তাফসির পাওয়া যায়নি।</div>';
+}
+function wordsPanel(){
+ let s=loadSettings();
+ let selected=s.wl||"en";
+ let h='<h2>শব্দে শব্দে অর্থের ভাষা</h2><p>GreenTech-এর তালিকায় ১৫টি ভাষা রয়েছে। মূল তাফহীম অ্যাপে এখন বাংলা, English এবং একসঙ্গে দুটো ভাষার ডেটাই ব্যবহারযোগ্য।</p>';
+ h+='<div class="group"><button class="option'+(selected==="both"?" active":"")+'" data-word="both"><i class="hgi hgi-stroke hgi-translation" aria-hidden="true"></i><span class="name">বাংলা + English<small>একসঙ্গে দুই অর্থ</small></span></button>'+catalog.wordLanguages.map(x=>{
+ const avail=["en","bn"].includes(x.language),active=selected===x.language;
+ return '<button type="button" class="option'+(active?" active":"")+'" data-word="'+esc(x.language)+'"'+(avail?"":" disabled")+'><i class="hgi hgi-stroke hgi-language-circle" aria-hidden="true"></i><span class="name">'+esc(x.name)+'<small>'+(avail?"এখন ব্যবহার করা যাবে":"সংশ্লিষ্ট শব্দার্থের DB ইনস্টল হয়নি")+'</small></span></button>';
+ }).join("")+'</div><div class="notice">ভাষার নাম পাওয়া মানে তার সম্পূর্ণ শব্দার্থের ডেটাবেসও পাওয়া নয়। অন্য ভাষা চালু করতে মূল শব্দার্থের DB আমদানি ও আয়াত-শব্দ ID যাচাই করতে হবে।</div>';
+ return h;
+}
+function interfacePanel(){
+ return '<h2>অ্যাপ ইন্টারফেসের ভাষা</h2><p>GreenTech-এর পুরোনো প্রকাশিত অ্যাপ-ইন্টারফেস তালিকায় নিচের ভাষাগুলো উল্লেখ আছে। কিন্তু এই তাফহীমুল কুরআনের নিজস্ব ইন্টারফেস এখন বাংলায় লেখা; সম্পূর্ণ অনুবাদ ছাড়া এখানকার বাটন-লেবেল বদলানো হচ্ছে না।</p><div class="interface-grid">'+uiLabels.map(([code,name])=>'<div><b>'+esc(name)+'</b><small>'+esc(code==="bn"?"বর্তমান ইন্টারফেস":"সম্পূর্ণ UI অনুবাদ সংযুক্ত হয়নি")+'</small></div>').join("")+'</div><div class="notice">এখানে <b>ইন্টারফেস ভাষা</b> ও <b>কুরআন অনুবাদের ভাষা</b> আলাদা। English অনুবাদ চালু করলেও বাংলা মেনু স্বয়ংক্রিয়ভাবে English হবে না।</div>';
+}
+function render(){
+ if(!catalog)return;
+ document.querySelectorAll("[data-tab]").forEach(x=>{let on=x.dataset.tab===state.tab;x.classList.toggle("active",on);x.setAttribute("aria-selected",String(on))});
+ if(state.tab==="editions"){ $("#panel").innerHTML=buildEditionControls();$("#kindSelect").value=state.kind;renderEntries()}
+ else if(state.tab==="words"){$("#panel").innerHTML=wordsPanel()}
+ else $("#panel").innerHTML=interfacePanel()
+}
+document.addEventListener("click",e=>{
+ let tab=e.target.closest("[data-tab]");if(tab){state.tab=tab.dataset.tab;render();return}
+ let lang=e.target.closest("[data-lang]");if(lang){state.lang=lang.dataset.lang;render();return}
+ let edition=e.target.closest("[data-edition]");if(edition){chooseEdition(edition.dataset.edition);return}
+ let word=e.target.closest("[data-word]");if(word){let lang=word.dataset.word;if(!["en","bn","both"].includes(lang))return;let ok=saveSettings(s=>s.wl=lang);if(ok){note("শব্দার্থের ভাষা সংরক্ষিত হয়েছে।");render()}}
+});
+document.addEventListener("change",e=>{
+ if(e.target.id==="languageSelect"){state.lang=e.target.value;render()}
+ if(e.target.id==="kindSelect"){state.kind=e.target.value;renderEntries()}
+});
+document.addEventListener("input",e=>{if(e.target.id==="editionSearch"){state.query=e.target.value;renderEntries()}});
+fetch("languages/greentech-catalog.json").then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{
+ if(data.translations.length!==162||data.wordLanguages.length!==15||new Set(data.translations.map(x=>x.language)).size!==66)throw Error("উৎসের সংখ্যা যাচাই মেলেনি");
+ catalog=data;$("#statLang").textContent=bn(new Set(data.translations.map(x=>x.language)).size);$("#statEdition").textContent=bn(data.translations.length);$("#statWord").textContent=bn(data.wordLanguages.length);note("সম্পূর্ণ ভাষা-ক্যাটালগ প্রস্তুত।");render()
+}).catch(error=>{$("#panel").innerHTML='<div class="empty">ভাষার তালিকা খুলতে সমস্যা হয়েছে। ইন্টারনেট সংযোগ পরীক্ষা করে রিফ্রেশ করুন।</div>';note("ভাষার তথ্য লোড হয়নি: "+error.message,true)});
+})();
+</script>
+</body>
+</html>
