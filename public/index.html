@@ -481,7 +481,7 @@ loaded.forEach(function(d,i){var sn=first[0]+i;d.ay.forEach(function(y){var n=gi
 }catch(e){if(token===R.token)$('#rb').innerHTML='<div class="note">ডেটা লোড করা যায়নি। ফাইলটি নতুন ব্রাউজারে আবার খুলুন।</div>';console.error(e)}}
 function titleR(){return R.view==='sura'?bn(R.s)+'. '+esc(M[R.s-1][1]):LABEL[R.view]+' '+bn(R.idx+1)}
 function rh(){var max=R.view==='sura'?114:X.nav[R.view].length;$('#rh').innerHTML='<button class="ib" data-r="back" aria-label="ফিরে যান">'+I(P.back)+'</button><h1><button data-r="pick">'+titleR()+' ▾</button></h1><button class="ib" data-r="jump" aria-label="আয়াতে যান">'+I(P.jump)+'</button><button class="ib" data-r="set" aria-label="সেটিংস">'+I(P.tune)+'</button>';
-$('#rf').innerHTML='<button data-r="mode" class="'+(S.mode==='trans'?'on':'')+'">'+I(S.mode==='trans'?P.book:P.tr)+'<span>'+(S.mode==='trans'?'তিলাওয়াত':'অনুবাদ')+'</span></button><button data-r="as" class="'+(asv?'on':'')+'">'+I(P.as)+'<span>অটোস্ক্রল</span></button><button data-r="au">'+I(P.play)+'<span>অডিও</span></button><button data-r="single">'+I(P.lines)+'<span>একক আয়াত</span></button>';}
+$('#rf').innerHTML='<button data-r="mode" class="'+(S.mode==='trans'?'on':'')+'">'+I(S.mode==='trans'?P.book:P.tr)+'<span>'+(S.mode==='trans'?'তিলাওয়াত':'অনুবাদ')+'</span></button><button data-r="as" class="'+(asv?'on':'')+'">'+I(P.as)+'<span>অটোস্ক্রল</span></button><button data-r="au">'+I(P.play)+'<span>অডিও</span></button><button data-r="single">'+I(P.lines)+'<span>তাফসির</span></button>';}
 function verseHTML(y){if(S.script==='indo')return (S.c.tj&&y.ipt)?y.ipt:esc(y.ip);if(!S.c.tj||!y.taj)return esc(y.ar);var raw=plain(y.taj),ix=y.ar.indexOf(raw);return ix<0?esc(y.ar):esc(y.ar.slice(0,ix))+y.taj+esc(y.ar.slice(ix+raw.length))}
 function words(y){return S.script==='indo'?y.iw:y.aw}
 function wordHTML(y,i){return S.c.tj&&(S.script==='uthmani'?y.taw:y.iwt)?(S.script==='uthmani'?y.taw[i]:y.iwt[i]):esc(words(y)[i])}
@@ -723,7 +723,7 @@ apply();
 })();
 </script><script>
 (function(){
-var BUILD='ae690fb35a',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var BUILD='tfq-v5-20261107',LS={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 var $=function(i){return document.getElementById(i)};
 function card(id,html){var d=document.createElement('div');d.id=id;d.className='qa-card';d.innerHTML=html;document.body.appendChild(d);return d}
 function note(t){var c=card('qaOk','<div style="flex:1"><b>'+t+'</b></div>');setTimeout(function(){c.remove()},3500)}
